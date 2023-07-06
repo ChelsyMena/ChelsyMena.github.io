@@ -16,6 +16,6 @@ window.addEventListener('DOMContentLoaded', function() {
     };
 
     // Obtener el  pedazo de  HTML
-    xhr.open('GET', '../../barra_lateral.html', true);
+    xhr.open('GET', '../barra_lateral.html', true);
     xhr.send();
 });
