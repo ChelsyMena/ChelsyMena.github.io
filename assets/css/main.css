@@ -298,6 +298,7 @@ input, select, textarea {
 		flex-wrap: wrap;
 		box-sizing: border-box;
 		align-items: stretch;
+		text-align: center;
 	}
 
 		.row > * {
@@ -2050,9 +2051,9 @@ input, select, textarea {
 			-webkit-transition: opacity 0.2s ease-in-out;
 			-ms-transition: opacity 0.2s ease-in-out;
 			transition: opacity 0.2s ease-in-out;
-			background: url("images/overlay.png");
+			/* background: url("images/overlay.png"); */
 			border-radius: 0.35em;
-			content: 'Go to Project';
+			content: '';
 			display: block;
 			height: 100%;
 			left: 0;
@@ -2065,7 +2066,7 @@ input, select, textarea {
 		.image.thumb {
 			text-align: center;
 		}
-/* 
+
 			.image.thumb:after {
 				-moz-transition: opacity 0.2s ease-in-out;
 				-webkit-transition: opacity 0.2s ease-in-out;
@@ -2074,11 +2075,11 @@ input, select, textarea {
 				border-radius: 0.35em;
 				border: solid 3px rgba(255, 255, 255, 0.5);
 				color: #fff;
-				content: 'Go to Project';
+				content: 'See Project';
 				display: inline-block;
 				font-size: 0.8em;
 				font-weight: 400;
-				left: 50%;
+				left: 46%;
 				line-height: 2.25em;
 				margin: -1.25em 0 0 -3em;
 				opacity: 0;
@@ -2092,7 +2093,7 @@ input, select, textarea {
 
 			.image.thumb:hover:after {
 				opacity: 1.0;
-			} */
+			}
 
 			.image.thumb:hover:before {
 				background: url("images/overlay.png"), url("images/overlay.png");
@@ -3184,7 +3185,7 @@ input, select, textarea {
 
 		/* Poptrox */
 
-			.poptrox-popup {
+			/* .poptrox-popup {
 				border-radius: 0;
 			}
 
@@ -3193,7 +3194,7 @@ input, select, textarea {
 					margin-top: -1em;
 				}
 
-	}
+	} */
 
 /* XSmall */
 
