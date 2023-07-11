@@ -16,6 +16,6 @@ window.addEventListener('DOMContentLoaded', function() {
     };
 
     // Obtener el  pedazo de  HTML
-    xhr.open('GET', '../originales/notebook_p1_properati.html', true);
+    xhr.open('GET', '../notebook_p1_properati.html', true);
     xhr.send();
 });
