@@ -251,7 +251,7 @@
     }
 
     body {
-      --anim-duration-none: 0;
+      /* --anim-duration-none: 0;
       --anim-duration-superfast: 70ms;
       --anim-duration-fast: 140ms;
       --anim-duration-moderate: 300ms;
@@ -310,7 +310,7 @@
       --checkbox-border-color: var(--text-faint);
       --checkbox-border-color-hover: var(--text-muted);
       --checklist-done-decoration: line-through;
-      --checklist-done-color: var(--text-muted);
+      --checklist-done-color: var(--text-muted); */
       --code-white-space: pre-wrap;
       --code-size: var(--font-smaller);
       --code-background: var(--background-primary-alt);
@@ -325,7 +325,7 @@
       --code-string: var(--color-green);
       --code-tag: var(--color-red);
       --code-value: var(--color-purple);
-      --collapse-icon-color: var(--text-faint);
+      /*--collapse-icon-color: var(--text-faint);
       --collapse-icon-color-collapsed: var(--text-accent);
       --cursor: default;
       --cursor-link: pointer;
@@ -717,7 +717,7 @@
       --interactive-hover: var(--color-base-10);
       --interactive-accent-hsl: var(--color-accent-hsl);
       --interactive-accent: var(--color-accent-1);
-      --interactive-accent-hover: var(--color-accent-2);
+      --interactive-accent-hover: var(--color-accent-2); */
     }
 
     .theme-light {
@@ -829,7 +829,7 @@
     }
 
     body {
-      --font-default: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+      /* --font-default: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
       --font-monospace-default: Menlo, SFMono-Regular, Consolas, "Roboto Mono", "Source Code Pro", monospace;
       --font-interface-override: "??";
       --font-interface-theme: "??";
@@ -838,14 +838,14 @@
       --font-text-theme: "??";
       --font-text: var(--font-text-override), var(--font-text-theme), var(--font-interface);
       --font-print-override: "??";
-      --font-print: var(--font-print-override), var(--font-text-override), var(--font-text-theme), "Arial";
+      --font-print: var(--font-print-override), var(--font-text-override), var(--font-text-theme), "Arial"; */
       --font-monospace-override: "??";
       --font-monospace-theme: "??";
       --font-monospace: var(--font-monospace-override), var(--font-monospace-theme), var(--font-monospace-default);
-      --font-text-size: 16px;
-      --font-mermaid: var(--font-text);
+      /* --font-text-size: 16px;
+      --font-mermaid: var(--font-text); */
     }
-
+/* 
     @media print {
 
       html,
@@ -1020,7 +1020,7 @@
       50% {
         background-color: transparent;
       }
-    }
+    } */
 
     div.CodeMirror span.CodeMirror-matchingbracket {
       color: rgb(0, 187, 0);
@@ -1049,7 +1049,7 @@
     span.CodeMirror-selectedtext {
       background: none;
     }
-
+/* 
     .markdown-source-view {
       font-size: var(--font-text-size);
       font-family: var(--font-text);
@@ -1061,14 +1061,14 @@
 
     .workspace-leaf-content.is-read-mode .markdown-source-view {
       z-index: 0;
-    }
+    } */
 
     .markdown-source-view.is-readable-line-width .CodeMirror {
       max-width: var(--file-line-width);
       margin-left: auto;
       margin-right: auto;
     }
-
+/* 
     .drag-ghost {
       position: fixed;
       font-size: var(--font-ui-small);
@@ -1153,13 +1153,13 @@
 
     .markdown-source-view.mod-cm6 ::selection {
       background-color: var(--text-selection);
-    }
+    } */
 
     .markdown-source-view.mod-cm6 .cm-line .cm-selection,
     .markdown-source-view.mod-cm6 .cm-line .cm-inline-code .cm-selection {
       background-color: var(--text-selection);
     }
-
+/* 
     .markdown-source-view.mod-cm6 .cm-selectionBackground,
     .markdown-source-view.mod-cm6 .cm-editor>.cm-scroller>.cm-selectionLayer>.cm-selectionBackground {
       background-color: var(--text-selection);
@@ -1779,9 +1779,9 @@
       overflow-wrap: break-word;
       color: var(--text-normal);
       user-select: text;
-    }
+    } */
 
-    .workspace-leaf-content.is-read-mode .markdown-preview-view {
+    /* .workspace-leaf-content.is-read-mode .markdown-preview-view {
       width: 100%;
       left: 0px;
       background-color: var(--background-primary);
@@ -1970,7 +1970,7 @@
 
     .setting-item-description:empty {
       display: none;
-    }
+    } */
 
     .setting-item-description code {
       font-family: var(--font-monospace);
@@ -1980,7 +1980,7 @@
       position: relative;
       bottom: 1px;
     }
-
+/* 
     .setting-item-description ul {
       margin: var(--size-4-1) 0;
       padding-left: var(--size-4-6);
@@ -6282,7 +6282,7 @@
 
     iframe {
       border: 0px;
-    }
+    } */
 
     kbd {
       color: var(--code-normal);
@@ -6293,7 +6293,7 @@
       padding: 0.1em 0.25em;
     }
 
-    .workspace-leaf-content[data-type="pdf"] .view-content {
+    /* .workspace-leaf-content[data-type="pdf"] .view-content {
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -7873,7 +7873,7 @@
 
     .markdown-source-view.mod-cm6 .callout {
       margin: 0px;
-    }
+    } */
 
     .markdown-rendered code {
       color: var(--code-normal);
@@ -8075,7 +8075,7 @@
     .token.important {
       color: var(--code-important);
     }
-
+/* 
     .markdown-preview-view .markdown-embed .markdown-preview-view {
       --file-folding-offset: 0px;
       height: 100%;
@@ -12820,7 +12820,7 @@
       width: 100%;
       padding: 8px 12px;
       height: auto;
-    }
+    } */
 
     .is-mobile .markdown-rendered pre:not(:hover)>button.copy-code-button {
       display: block;
@@ -12830,7 +12830,7 @@
       width: auto;
     }
 
-    .is-mobile .empty-state-action-list {
+    /* .is-mobile .empty-state-action-list {
       margin-top: 40px;
     }
 
@@ -14548,7 +14548,7 @@
 
     body.theme-light.css-settings-manager {}
 
-    body.theme-dark.css-settings-manager {}
+    body.theme-dark.css-settings-manager {} */
   </style>
 
   <!-- Theme Styles -->
@@ -23674,7 +23674,7 @@ settings:
 
     /*#endregion */
 
-    /*#region Canvas */
+    /* #region Canvas
     .canvas-card-menu {
       display: none;
       cursor: default !important;
@@ -23713,13 +23713,13 @@ settings:
 
     .canvas-node-container {
       cursor: default !important;
-    }
+    } */
 
     /*#endregion */
 
     /*#region Sidebars */
 
-    .sidebar {
+    /* .sidebar {
       background-color: var(--background-secondary);
       flex: 1 0 min-content;
       display: flex;
@@ -23777,13 +23777,13 @@ settings:
       .theme-toggle-input {
         display: none !important;
       }
-    }
+    } */
 
     /*#endregion */
 
     /*#region Content / Markdown Preview View */
 
-    .webpage-container {
+    /* .webpage-container {
       background-color: var(--background-primary);
       display: flex;
       flex-direction: row;
@@ -23821,13 +23821,13 @@ settings:
       min-height: unset;
       max-width: var(--line-width);
       flex-basis: var(--line-width);
-    }
+    } */
 
     /*#endregion */
 
     /*#region Kanban */
 
-    .markdown-preview-view.kanban-plugin__markdown-preview-view {
+    /* .markdown-preview-view.kanban-plugin__markdown-preview-view {
       font-family: var(--font-text, var(--default-font));
       font-size: .875rem;
       line-height: var(--line-height-tight);
@@ -23847,28 +23847,28 @@ settings:
     .kanban-plugin__lane-settings-button.clickable-icon,
     .kanban-plugin__item-postfix-button.clickable-icon {
       display: none;
-    }
+    } */
 
     /*#endregion */
 
     /*#region Tree */
 
     /* Base tree */
-    .tree-container {
+    /* .tree-container { */
       /* padding-bottom: 12px; */
       /* margin: 12px; */
       /* height: 100%; */
       /* position: relative; */
       /* display: contents; */
-      position: relative;
+      /* position: relative;
       height: 100%;
       width: auto;
       margin: var(--sidebar-margin);
       margin-top: 3em;
-      margin-bottom: 0;
-    }
+      margin-bottom: 0; */
+    /* } */
 
-    .tree-container .tree-header {
+    /* .tree-container .tree-header {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -23968,11 +23968,11 @@ settings:
       cursor: pointer;
       color: var(--nav-item-color-hover);
       text-decoration: underline;
-    }
+    } */
 
     /* Indentation guide */
 
-    .tree-container>.tree-scroll-area>* .tree-item {
+    /* .tree-container>.tree-scroll-area>* .tree-item {
       margin-left: calc(var(--tree-horizontal-spacing) + var(--collapse-arrow-size) / 2 + 1px);
       border-left: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
     }
@@ -23986,10 +23986,10 @@ settings:
     }
 
 
-    .tree-container .tree-item:hover:not(.mod-active):not(.mod-collapsible):not(:has(.tree-item:hover))
+    .tree-container .tree-item:hover:not(.mod-active):not(.mod-collapsible):not(:has(.tree-item:hover)) */
 
     /* Hover */
-      {
+      /* {
       border-left: var(--nav-indentation-guide-width) solid var(--nav-item-color-hover);
     }
 
@@ -24003,11 +24003,11 @@ settings:
     .webpage-container .tree-container:not(.mod-nav-indicator) .tree-item .tree-item-contents,
     .webpage-container .tree-container>.tree-scroll-area>.tree-item>.tree-item-contents {
       margin-left: 0 !important;
-    }
+    } */
 
     /* Special */
 
-    .tree-container.outline-tree .tree-item[data-depth='1']>.tree-item-contents>.tree-item-link {
+    /* .tree-container.outline-tree .tree-item[data-depth='1']>.tree-item-contents>.tree-item-link {
       font-weight: 900;
       font-size: 1.1em;
       margin-left: 0;
@@ -24016,7 +24016,7 @@ settings:
     .tree-container .tree-item.is-collapsed>.tree-item-contents>.tree-item-icon.collapse-icon>svg {
       transition: transform 0.1s ease-in-out;
       transform: rotate(-90deg);
-    }
+    } */
 
 
 
@@ -24024,7 +24024,7 @@ settings:
 
     /*#region Headers */
 
-    .collapse-icon svg.svg-icon {
+    /* .collapse-icon svg.svg-icon {
       color: var(--nav-collapse-icon-color);
       stroke-width: 4px;
       width: var(--collapse-arrow-size);
@@ -24037,7 +24037,7 @@ settings:
     div.is-collapsed>*>.heading-collapse-indicator.collapse-icon>svg {
       transition: transform 0.1s ease-in-out;
       transform: rotate(-90deg);
-    }
+    } */
 
     /*#endregion */
 
@@ -24053,7 +24053,7 @@ settings:
     /*#endregion */
 
     /*#region Obsidian Columns Plugin */
-    .columnParent {
+    /* .columnParent {
       display: flex;
       padding: 15px 20px;
       flex-wrap: wrap;
@@ -24067,13 +24067,13 @@ settings:
     .columnChild {
       flex-grow: 1;
       flex-basis: 0px;
-    }
+    } */
 
     /*#endregion */
 
     /*#region Theme Toggle */
 
-    .theme-toggle-container {
+    /* .theme-toggle-container {
       --toggle-width: 50px;
       --toggle-height: 23px;
       --border-radius: calc(var(--toggle-height) / 2);
@@ -24085,10 +24085,10 @@ settings:
       display: inline-block;
       cursor: pointer;
       margin: 10px;
-    }
+    } */
 
     /* animation to expand width, move handle, then contract width */
-    @keyframes toggle-slide-right {
+    /* @keyframes toggle-slide-right {
       0% {
         width: var(--handle-width);
         transform: translateX(0);
@@ -24121,10 +24121,10 @@ settings:
         width: var(--handle-width);
         transform: translateX(0);
       }
-    }
+    } */
 
     /* just exapnd and contract */
-    @keyframes toggle-expand-right {
+    /* @keyframes toggle-expand-right {
       0% {
         width: var(--handle-width);
       }
@@ -24159,10 +24159,10 @@ settings:
     .theme-toggle-input {
       display: none;
       z-index: 1000;
-    }
+    } */
 
     /* Fill in dark mode / default */
-    .toggle-background {
+    /* .toggle-background {
       position: relative;
       width: var(--toggle-width);
       height: var(--toggle-height);
@@ -24170,13 +24170,13 @@ settings:
       background-color: var(--background-modifier-border);
 
       transition: background-color 0.2s;
-      z-index: 1000;
+      z-index: 1000; */
 
       /* box-shadow: inset 0px 0px 100px -70px var(--color-accent); */
-    }
+    /* } */
 
     /* Handle default */
-    .toggle-background::before {
+    /* .toggle-background::before {
       content: "";
       position: absolute;
       left: var(--handle-margin);
@@ -24190,10 +24190,10 @@ settings:
       animation: toggle-slide-left 0.2s ease-in-out normal both;
 
       z-index: 1000;
-    }
+    } */
 
     /* handle light*/
-    .theme-toggle-input:checked~.toggle-background::before {
+    /* .theme-toggle-input:checked~.toggle-background::before {
       animation: toggle-slide-right 0.2s ease-in-out normal both;
     }
 
@@ -24203,10 +24203,10 @@ settings:
 
     .theme-toggle-input:active:checked~.toggle-background::before {
       animation: toggle-expand-left 0.2s ease-in-out normal both;
-    }
+    } */
 
     /* sun moon icon icon default */
-    .toggle-background::after {
+    /* .toggle-background::after {
       content: "";
       position: absolute;
       right: var(--handle-margin);
@@ -24216,18 +24216,18 @@ settings:
       transition: transform 0.3s;
       background: url('https://api.iconify.design/lucide/moon.svg?color=white') no-repeat center center;
       transform: scale(0.9);
-    }
+    } */
 
     /* sun moon icon icon light */
-    .theme-toggle-input:checked~.toggle-background::after {
+    /* .theme-toggle-input:checked~.toggle-background::after {
       transform: translateX(calc(var(--handle-translation) * -1)) scale(0.9);
       background: url('https://api.iconify.design/lucide/sun.svg') no-repeat center center;
-    }
+    } */
 
     /*#endregion */
 
     /*#region Graph View */
-    #graph-canvas {
+    /* #graph-canvas {
       width: 100%;
       height: 100%;
       border: 1px solid var(--modal-border-color);
@@ -24298,7 +24298,7 @@ settings:
       position: absolute;
       top: 5px;
       right: 5px;
-    }
+    } */
 
 
 
@@ -24306,7 +24306,7 @@ settings:
 
     /*#region Tweaks */
 
-    hr {
+    /* hr {
       border: none;
       border-top: var(--hr-thickness) solid;
       border-color: var(--hr-color);
@@ -24314,173 +24314,13 @@ settings:
 
     .markdown-embed-link {
       display: none;
-    }
+    } */
 
     /*#endregion */
   </style>
 
   <!-- Snippets -->
   <style>
-    /* --- note_width.css --- */
-    .markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
-    .markdown-source-view.mod-cm6.is-readable-line-width .cm-editor .cm-contentContainer,
-    .markdown-source-view.mod-cm6.is-readable-line-width .cm-editor .cm-contentContainer .cm-content,
-    .markdown-source-view.mod-cm6.is-readable-line-width .cm-editor .cm-contentContainer .cm-content .cm-line {
-      max-width: 1000px;
-    }
-
-
-    /* --- bigger_popup.css --- */
-    /* get more snippets at https://github.com/kmaasrud/awesome-obsidian */
-    /* author: https://github.com/cannibalox & https://github.com/konhi */
-    /* source: https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/82 */
-
-    .popover.hover-popover {
-      transform: scale(0.8);
-      /* makes the content smaller */
-      max-height: 800px;
-      /* was 300 */
-      min-height: 100px;
-      width: 500px;
-      /* was 400 */
-    }
-
-    .popover.hover-popover .markdown-embed {
-      height: 800px;
-    }
-
-
-    /* --- h1_styling.css --- */
-    /* Gradient coloured headers in Edit and Preview mode */
-
-    .mod-cm6 .cm-editor .cm-line {
-      text-align: justify;
-    }
-
-    .cm-s-obsidian .cm-header-1,
-    .markdown-preview-view h1 {
-      font-family: 'SF Pro Display', bold;
-      font-size: 54px;
-      margin-top: 10px;
-      margin-bottom: 30px;
-      line-height: 45px;
-    }
-
-    .cm-s-obsidian .cm-header-1,
-    .markdown-preview-view h2 {
-      font-family: 'SF Pro Display', black;
-      font-size: 40px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      line-height: 25px;
-    }
-
-    .cm-s-obsidian .cm-header-1,
-    .markdown-preview-view h3 {
-      font-family: 'SF Pro Display', black;
-      font-size: 25px;
-      margin-top: 10px;
-      text-align: left;
-      margin-bottom: 0px;
-      line-height: 20px;
-    }
-
-    .cm-s-obsidian .cm-header-1,
-    .markdown-preview-view h4 {
-      font-family: 'SF Pro Display', bold, italic;
-      font-size: 20px;
-      font-weight: 600;
-      margin-top: 10px;
-      text-align: left;
-      margin-bottom: 0px;
-      line-height: 15px;
-      --h4-variant: normal;
-    }
-
-    .mod-cm6 .cm-editor .HyperMD-header-1 {
-
-      font-family: 'SF Pro Display', black;
-      font-size: 54px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      line-height: 45px;
-    }
-
-    .mod-cm6 .cm-editor .HyperMD-header-2 {
-
-      font-family: 'SF Pro Display', black;
-      font-size: 40px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      line-height: 25px;
-    }
-
-    .mod-cm6 .cm-editor .HyperMD-header-3 {
-
-      font-family: 'SF Pro Display', black;
-      font-size: 25px;
-      margin-top: 10px;
-      text-align: left;
-      margin-bottom: 0px;
-      line-height: 20px;
-    }
-
-    .mod-cm6 .cm-editor .HyperMD-header-4 {
-      font-family: 'SF Pro Display', bold, italic;
-      font-size: 20px;
-      font-weight: 600;
-      margin-top: 10px;
-      text-align: left;
-      margin-bottom: 10px;
-      line-height: 18px;
-      --h4-variant: normal;
-    }
-
-
-    .markdown-preview-view blockquote,
-    .markdown-preview-view ol,
-    .markdown-preview-view p,
-    .markdown-preview-view ul {
-      margin-block-end: var(--spacing-p);
-    }
-
-
-
-    /* --- callouts.css --- */
-    /* don't display title for idea and quote callouts */
-    .callout[data-callout="idea"] .callout-title-inner,
-    .callout[data-callout="quote"] .callout-title-inner,
-    .callout[data-callout="question"] .callout-title-inner {
-      display: none;
-    }
-
-    /* remove top and bottom margins and add left margin for idea and quote callouts */
-    .callout[data-callout="idea"] .callout-content p,
-    .callout[data-callout="quote"] .callout-content p,
-    .callout[data-callout="question"] .callout-content p {
-      margin-block-start: 0;
-      margin-block-end: 0;
-      margin-left: .5em;
-    }
-
-    /* align icon and content side-by-side */
-    .callout[data-callout="idea"],
-    .callout[data-callout="quote"],
-    .callout[data-callout="question"] {
-      display: flex;
-      align-items: flex-start;
-    }
-
-    /* v-align icon in center of first line */
-    .callout[data-callout="idea"] .callout-title .callout-icon,
-    .callout[data-callout="quote"] .callout-title .callout-icon,
-    .callout[data-callout="question"] .callout-title .callout-icon {
-      min-height: 1.5em;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
 
     /* --- center_image.css --- */
     img {
@@ -24490,732 +24330,662 @@ settings:
       border-radius: 10px;
     }
 
-
-    /* --- checklist.css --- */
-    .title.svelte-im5pnh:hover {
-      color: var(--text-normal);
-    }
-
-    .page.svelte-im5pnh {
-      cursor: auto !important;
-    }
-
-    .svg.svelte-t9i4te {
-      cursor: auto !important;
-    }
-
-    .item.svelte-zpfope.svelte-zpfope {
-      cursor: auto !important;
-    }
-
-    .checkbox.svelte-y3iyim {
-      cursor: pointer;
-    }
-
-    .svelte-im5pnh {
-      font-size: 12px;
-      margin-left: 8px;
-      margin-top: 8px;
-    }
-
-    .svelte-zpfope {
-      font-size: 12px;
-    }
-
-    .compact.svelte-zpfope>.toggle.svelte-zpfope {
-      margin-left: 8px;
-    }
-
-    .compact.svelte-zpfope.svelte-zpfope {
-      margin-left: 16px;
-      margin-right: 16px;
-    }
-
-    .group-header.svelte-im5pnh {
-      margin-top: 0px !important;
-      margin-bottom: 4px !important;
-    }
-
-    .compact.svelte-zpfope.svelte-zpfope {
-      margin-bottom: 4px !important;
-    }
-
-    .compact.svelte-zpfope>.toggle.svelte-zpfope {
-      padding: 0px 0px !important;
-      padding-right: 8px !important;
-    }
-
-    .checkbox.svelte-y3iyim {
-      width: 12px !important;
-      height: 12px !important;
-      min-width: 12px !important;
-      min-height: 12px !important;
-    }
-
-    .svg.svelte-t9i4te:hover {
-      fill: var(--interactive-accent-hover);
-    }
-
-    .content.svelte-sx5ktw.svelte-sx5ktw {
-      margin-top: -10px;
-    }
-
   </style>
 
 
   <script>
-    //#region Helpers
-
-    function getAbsoluteRootPath() {
-      if (typeof rootPath == 'undefined') setupRootPath(document);
-      return new URL(window.location.href + "/../" + rootPath).pathname;
-    }
-
-    function getURLPath(url = window.location.pathname) {
-      let absoluteRoot = getAbsoluteRootPath();
-      let pathname = url.substring(absoluteRoot.length);
-      return pathname;
-    }
-
-    function getURLRootPath(url = window.location.pathname) {
-      let path = getURLPath(url);
-      let splitPath = path.split("/");
-      let rootPath = "";
-      for (let i = 0; i < splitPath.length - 1; i++) {
-        rootPath += "../";
-      }
-      return rootPath;
-    }
-
-    async function setTreeCollapsed(element, collapsed, animate = true) {
-      if 
-      (!element || !element.classList.contains("mod-collapsible")) return;
-
-      let children = element.querySelector(".tree-item-children");
-
-      if (collapsed) {
-        element.classList.add("is-collapsed");
-        if (animate) slideUp(children, 100);
-        else children.style.display = "none";
-      } else {
-        element.classList.remove("is-collapsed");
-        if (animate) slideDown(children, 100);
-        else children.style.removeProperty("display");
-      }
-    }
-
-    async function setTreeCollapsedAll(elements, collapsed, animate = true) {
-      let childrenList = [];
-      elements.forEach(async element => {
-        if (!element || !element.classList.contains("mod-collapsible")) return;
-
-        let children = element.querySelector(".tree-item-children");
-
-        if (collapsed) {
-          element.classList.add("is-collapsed");
-        } else {
-          element.classList.remove("is-collapsed");
-        }
-
-        childrenList.push(children);
-      });
-
-      if (collapsed) {
-        if (animate) slideUpAll(childrenList, 100);
-        else childrenList.forEach(async children => children.style.display = "none");
-      } else {
-        if (animate) slideDownAll(childrenList, 100);
-        else childrenList.forEach(async children => children.style.removeProperty("display"));
-      }
-    }
-
-    function toggleTreeCollapsed(element) {
-      if (!element) return;
-      setTreeCollapsed(element, !element.classList.contains("is-collapsed"));
-    }
-
-    function toggleTreeCollapsedAll(elements) {
-      if (!elements) return;
-      setTreeCollapsedAll(elements, !elements[0].classList.contains("is-collapsed"));
-    }
-
-    function getHeaderEl(headerDiv) {
-      let possibleChildHeader = headerDiv.firstChild;
-      let isHeader = false;
-
-      while (possibleChildHeader != null) {
-        isHeader = possibleChildHeader ? /[Hh][1-6]/g.test(possibleChildHeader.tagName) : false;
-        if (isHeader) break;
-
-        possibleChildHeader = possibleChildHeader.nextElementSibling;
-      }
-
-      return possibleChildHeader;
-    }
-
-    function getPreviousHeader(headerDiv) {
-      let possibleParent = headerDiv.previousElementSibling;
-      let isHeader = false;
-
-      while (possibleParent != null) {
-        let possibleChildHeader = getHeaderEl(possibleParent);
-        isHeader = possibleChildHeader ? /[Hh][1-6]/g.test(possibleChildHeader.tagName) : false;
-        if (isHeader) break;
-
-        possibleParent = possibleParent.previousElementSibling;
-      }
-
-      return possibleParent;
-    }
-
-    function setHeaderOpen(headerDiv, open, openParents = true) {
-      if (headerDiv.tagName != "DIV" || !getHeaderEl(headerDiv)) {
-        console.error("setHeaderOpen() must be called with a header div");
-        return;
-      }
-
-      // let selector = getHeadingContentsSelector(header);
-      if (open) {
-        headerDiv.classList.remove("is-collapsed");
-        headerDiv.style.display = "";
-      }
-      if (!open) {
-        headerDiv.classList.add("is-collapsed");
-      }
-
-      let headerEl = getHeaderEl(headerDiv);
-
-      let childHeaders = [];
-
-      let possibleChild = headerDiv.nextElementSibling;
-
-      // loop through next siblings showing/ hiding children until we reach a header of the same or lower level
-      while (possibleChild != null) {
-        let possibleChildHeader = getHeaderEl(possibleChild);
-
-        if (possibleChildHeader) {
-          // if header is a sibling of this header then break
-          if (possibleChildHeader.tagName <= headerEl.tagName) break;
-
-          // save child headers to be re closed afterwards
-          childHeaders.push(possibleChild);
-        }
-
-        if (!open) possibleChild.style.display = "none";
-        else possibleChild.style.display = "";
-
-        possibleChild = possibleChild.nextElementSibling;
-      }
-
-      if (open) {
-        // if we are opening the header then we need to make sure that all closed child headers stay closed
-        childHeaders.forEach(function(item) {
-          if (item.classList.contains("is-collapsed")) {
-            setHeaderOpen(item, false);
-          }
-        });
-
-        // if we are opening the header then we need to make sure that all parent headers are open
-        if (openParents) {
-          let previousHeader = getPreviousHeader(headerDiv);
-
-          while (previousHeader != null) {
-            let previousHeaderEl = getHeaderEl(previousHeader);
-
-            if (previousHeaderEl.tagName < headerEl.tagName) {
-              // if header is a parent of this header then unhide
-              setHeaderOpen(previousHeader, true);
-              break;
-            }
-
-            previousHeader = getPreviousHeader(previousHeader);
-          }
-        }
-      }
-    }
-
-    let slideUp = (target, duration = 500) => {
-
-      target.style.transitionProperty = 'height, margin, padding';
-      target.style.transitionDuration = duration + 'ms';
-      target.style.boxSizing = 'border-box';
-      target.style.height = target.offsetHeight + 'px';
-      target.offsetHeight;
-      target.style.overflow = 'hidden';
-      target.style.height = 0;
-      target.style.paddingTop = 0;
-      target.style.paddingBottom = 0;
-      target.style.marginTop = 0;
-      target.style.marginBottom = 0;
-      window.setTimeout(async () => {
-        target.style.display = 'none';
-        target.style.removeProperty('height');
-        target.style.removeProperty('padding-top');
-        target.style.removeProperty('padding-bottom');
-        target.style.removeProperty('margin-top');
-        target.style.removeProperty('margin-bottom');
-        target.style.removeProperty('overflow');
-        target.style.removeProperty('transition-duration');
-        target.style.removeProperty('transition-property');
-      }, duration);
-    }
-
-    let slideUpAll = (targets, duration = 500) => {
-
-      targets.forEach(async target => {
-        target.style.transitionProperty = 'height, margin, padding';
-        target.style.transitionDuration = duration + 'ms';
-        target.style.boxSizing = 'border-box';
-        target.style.height = target.offsetHeight + 'px';
-        target.offsetHeight;
-        target.style.overflow = 'hidden';
-        target.style.height = 0;
-        target.style.paddingTop = 0;
-        target.style.paddingBottom = 0;
-        target.style.marginTop = 0;
-        target.style.marginBottom = 0;
-      });
-
-      window.setTimeout(async () => {
-        targets.forEach(async target => {
-          target.style.display = 'none';
-          target.style.removeProperty('height');
-          target.style.removeProperty('padding-top');
-          target.style.removeProperty('padding-bottom');
-          target.style.removeProperty('margin-top');
-          target.style.removeProperty('margin-bottom');
-          target.style.removeProperty('overflow');
-          target.style.removeProperty('transition-duration');
-          target.style.removeProperty('transition-property');
-        });
-      }, duration);
-    }
-
-    let slideDown = (target, duration = 500) => {
-
-      target.style.removeProperty('display');
-      let display = window.getComputedStyle(target).display;
-      if (display === 'none') display = 'block';
-      target.style.display = display;
-      let height = target.offsetHeight;
-      target.style.overflow = 'hidden';
-      target.style.height = 0;
-      target.style.paddingTop = 0;
-      target.style.paddingBottom = 0;
-      target.style.marginTop = 0;
-      target.style.marginBottom = 0;
-      target.offsetHeight;
-      target.style.boxSizing = 'border-box';
-      target.style.transitionProperty = "height, margin, padding";
-      target.style.transitionDuration = duration + 'ms';
-      target.style.height = height + 'px';
-      target.style.removeProperty('padding-top');
-      target.style.removeProperty('padding-bottom');
-      target.style.removeProperty('margin-top');
-      target.style.removeProperty('margin-bottom');
-      window.setTimeout(async () => {
-        target.style.removeProperty('height');
-        target.style.removeProperty('overflow');
-        target.style.removeProperty('transition-duration');
-        target.style.removeProperty('transition-property');
-      }, duration);
-    }
-
-    let slideDownAll = (targets, duration = 500) => {
-
-      targets.forEach(async target => {
-        target.style.removeProperty('display');
-        let display = window.getComputedStyle(target).display;
-        if (display === 'none') display = 'block';
-        target.style.display = display;
-        let height = target.offsetHeight;
-        target.style.overflow = 'hidden';
-        target.style.height = 0;
-        target.style.paddingTop = 0;
-        target.style.paddingBottom = 0;
-        target.style.marginTop = 0;
-        target.style.marginBottom = 0;
-        target.offsetHeight;
-        target.style.boxSizing = 'border-box';
-        target.style.transitionProperty = "height, margin, padding";
-        target.style.transitionDuration = duration + 'ms';
-        target.style.height = height + 'px';
-        target.style.removeProperty('padding-top');
-        target.style.removeProperty('padding-bottom');
-        target.style.removeProperty('margin-top');
-        target.style.removeProperty('margin-bottom');
-      });
-
-      window.setTimeout(async () => {
-        targets.forEach(async target => {
-          target.style.removeProperty('height');
-          target.style.removeProperty('overflow');
-          target.style.removeProperty('transition-duration');
-          target.style.removeProperty('transition-property');
-        });
-      }, duration);
-    }
-
-    var slideToggle = (target, duration = 500) => {
-      if (window.getComputedStyle(target).display === 'none') {
-        return slideDown(target, duration);
-      } else {
-        return slideUp(target, duration);
-      }
-    }
-
-    var slideToggleAll = (targets, duration = 500) => {
-      if (window.getComputedStyle(targets[0]).display === 'none') {
-        return slideDownAll(targets, duration);
-      } else {
-        return slideUpAll(targets, duration);
-      }
-    }
-
-    //#endregion
-
-    async function loadDocument(url, pushHistory = true, scrollTo = true) {
-      console.log("Loading document: " + url);
-
-      // change the active file
-      setActiveDocument(url, scrollTo, pushHistory);
-
-      let response;
-
-      // if(typeof embeddedDocuments == 'undefined')
-      // {
-      try {
-        response = await fetch(url);
-      } catch (error) {
-        console.log("Cannot use fetch API (likely due to CORS), just loading the page normally.");
-        window.location.assign(url);
-        return;
-      }
-      // }
-      // else
-      // {
-      // 	response = new Response(embeddedDocuments[url], {status: 200, statusText: "OK"});
-      // }
-
-      let doc = document.implementation.createHTMLDocument();
-
-      if (response.ok) {
-        let html = (await response.text()).replaceAll("<!DOCTYPE html>", "").replaceAll("<html>", "").replaceAll("</html>", "");
-        doc.documentElement.innerHTML = html;
-
-        // copy document content and outline tree
-        document.querySelector(".document-container").innerHTML = doc.querySelector(".document-container").innerHTML;
-        document.querySelector(".outline-tree").innerHTML = doc.querySelector(".outline-tree").innerHTML;
-
-        // if the url has a heading, scroll to it
-        let splitURL = url.split("#");
-        let pathnameTarget = splitURL[0] ?? url;
-        let headingTarget = splitURL.length > 1 ? splitURL[1] : null;
-        if (headingTarget) document.getElementById(headingTarget).scrollIntoView();
-
-        // Change the root path to match the match from the new page
-        setupRootPath(doc);
-
-        // initialize events on the new page
-        initializePage(document.querySelector(".document-container"));
-        initializePage(document.querySelector(".outline-tree"));
-
-        document.title = doc.title;
-      } else {
-        // if the page is not able to load instead add a header saying the page doesn't exist
-        document.querySelector(".markdown-preview-view").innerHTML =
-          `
-		<div>
-			<center style='position: relative; transform: translateY(20vh); width: 100%; text-align: center;'>
-				<h1 style>Page Not Found</h1>
-			</center>
-		</div>
-		`;
-
-        document.querySelector(".outline-tree").innerHTML = "";
-
-        console.log("Page not found: " + getAbsoluteRootPath() + url);
-        let newRootPath = getURLRootPath(getAbsoluteRootPath() + url);
-        rootPath = newRootPath;
-        document.querySelector("base").href = newRootPath;
-
-        document.title = "Page Not Found";
-      }
-
-      return doc;
-    }
-
-    function setActiveDocument(url, scrollTo = true, pushHistory = true) {
-      let pathnameTarget = url.split("#")[0] ?? url; // path with no header
-
-      // switch active file in file tree
-      document.querySelector(".tree-item.mod-active")?.classList.remove("mod-active");
-      let treeItems = Array.from(document.querySelectorAll(".tree-item > .tree-item-contents > .tree-item-link"));
-      let treeItem = undefined;
-      for (let item of treeItems) {
-        if (item.getAttribute("href") == url) {
-          let parent = item.parentElement.parentElement;
-
-          parent.classList.add("mod-active");
-          treeItem = parent;
-
-          while (parent.hasAttribute("data-depth")) {
-            setTreeCollapsed(parent, false, false);
-            parent = parent.parentElement.parentElement;
-          }
-
-          continue;
-        }
-      }
-
-      if (scrollTo) treeItem?.scrollIntoView({
-        block: "center",
-        inline: "nearest"
-      });
-
-      // set the active file in th graph view
-      if (typeof nodes != 'undefined' && window.renderWorker) {
-        let activeNode = nodes?.paths.findIndex(function(item) {
-          return item.endsWith(pathnameTarget);
-        }) ?? -1;
-
-        if (activeNode >= 0) {
-          window.renderWorker.activeNode = activeNode;
-        }
-      }
-
-      if (pushHistory && window.location.protocol != "file:") window.history.pushState({
-        path: pathnameTarget
-      }, '', pathnameTarget);
-    }
-
-    //#region Initialization
-    function setupThemeToggle(setupOnNode) {
-      if (localStorage.getItem("theme_toggle") != null) {
-        setThemeToggle(localStorage.getItem("theme_toggle") == "true");
-      }
-
-      // var lastScheme = "theme-dark";
-      // change theme to match current system theme
-      // if (localStorage.getItem("theme_toggle") == null && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)
-      // {
-      // 	setThemeToggle(true);
-      // 	lastScheme = "theme-light";
-      // }
-      // if (localStorage.getItem("theme_toggle") == null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      // {
-      // 	setThemeToggle(true);
-      // 	lastScheme = "theme-dark";
-      // }
-
-      // set initial toggle state based on body theme class
-      if (document.body.classList.contains("theme-light")) {
-        setThemeToggle(true);
-      } else {
-        setThemeToggle(false);
-      }
-
-      function setThemeToggle(state, instant = false) {
-        let toggle = document.querySelector(".theme-toggle-input");
-
-        toggle.checked = state;
-
-        if (instant) {
-          var oldTransition = document.body.style.transition;
-          document.body.style.transition = "none";
-        }
-
-        if (!toggle.classList.contains("is-checked") && state) {
-          toggle.classList.add("is-checked");
-        } else if (toggle.classList.contains("is-checked") && !state) {
-          toggle.classList.remove("is-checked");
-        }
-
-        if (!state) {
-          if (document.body.classList.contains("theme-light")) {
-            document.body.classList.remove("theme-light");
-          }
-
-          if (!document.body.classList.contains("theme-dark")) {
-            document.body.classList.add("theme-dark");
-          }
-        } else {
-          if (document.body.classList.contains("theme-dark")) {
-            document.body.classList.remove("theme-dark");
-          }
-
-          if (!document.body.classList.contains("theme-light")) {
-            document.body.classList.add("theme-light");
-          }
-        }
-
-        if (instant) {
-          setTimeout(function() {
-            document.body.style.transition = oldTransition;
-          }, 100);
-        }
-
-        localStorage.setItem("theme_toggle", state ? "true" : "false");
-      }
-
-      setupOnNode.querySelector(".theme-toggle-input")?.addEventListener("change", event => {
-        console.log("Theme toggle changed to: " + !(localStorage.getItem("theme_toggle") == "true"));
-        setThemeToggle(!(localStorage.getItem("theme_toggle") == "true"));
-      });
-
-      // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => 
-      // {
-      // 	// return if we are printing
-      // 	if (window.matchMedia('print').matches)
-      // 	{
-      // 		printing = true;
-      // 		return;
-      // 	}
-
-      //     let newColorScheme = event.matches ? "theme-dark" : "theme-light";
-
-      // 	if (newColorScheme == lastScheme) return;
-
-      //     if (newColorScheme == "theme-dark")
-      //     {
-      // 		setThemeToggle(false);
-      //     }
-
-      //     if (newColorScheme == "theme-light")
-      //     {
-      // 		setThemeToggle(true);
-      //     }
-
-      // 	lastScheme = newColorScheme;
-      // });
-
-    }
-
-    function setupHeaders(setupOnNode) {
-      // MAKE HEADERS COLLAPSIBLE
-      setupOnNode.querySelectorAll(".heading-collapse-indicator").forEach(function(element) {
-        element.addEventListener("click", function() {
-          var isOpen = !this.parentElement.parentElement.classList.contains("is-collapsed");
-          setHeaderOpen(this.parentElement.parentElement, !isOpen);
-        });
-      });
-
-      // unfold header when an internal link that points to that header is clicked
-      setupOnNode.querySelectorAll("a.internal-link, a.tree-item-link").forEach(function(element) {
-        element.addEventListener("click", function(event) {
-          event.preventDefault();
-          let target = this.getAttribute("href");
-
-          // if the target is a header uncollapse it
-          if (target.startsWith("#")) {
-            console.log("Uncollapsing header: " + target);
-            let header = document.getElementById(target.substring(1));
-            setHeaderOpen(header.parentElement, true);
-          }
-        });
-      });
-    }
-
-    function setupTrees(setupOnNode) {
-      const fileTreeItems = Array.from(setupOnNode.querySelectorAll(".tree-container.file-tree .tree-item"));
-
-      setupOnNode.querySelectorAll(".tree-item-contents > .collapse-icon").forEach(function(item) {
-        item.addEventListener("click", function() {
-          toggleTreeCollapsed(item.parentElement.parentElement);
-        });
-      });
-
-      let fileTreeCollapse = setupOnNode.querySelector(".tree-container.file-tree .collapse-tree-button");
-      if (fileTreeCollapse) fileTreeCollapse.addEventListener("click", async function() {
-        let fileTreeIsCollapsed = fileTreeCollapse.classList.contains("is-collapsed");
-
-        setTreeCollapsedAll(fileTreeItems, !fileTreeIsCollapsed, fileTreeItems.length < 100);
-
-        fileTreeCollapse.classList.toggle("is-collapsed");
-        fileTreeCollapse.querySelector("iconify-icon").setAttribute("icon", fileTreeIsCollapsed ? "ph:arrows-out-line-horizontal-bold" : "ph:arrows-in-line-horizontal-bold");
-      });
-
-
-      let outlineTreeCollapse = setupOnNode.querySelector(".tree-container.outline-tree .collapse-tree-button");
-      if (outlineTreeCollapse) outlineTreeCollapse.addEventListener("click", async function() {
-        let outlineTreeIsCollapsed = outlineTreeCollapse.classList.contains("is-collapsed");
-
-        let items = Array.from(outlineTreeCollapse.parentElement.parentElement.querySelectorAll(".tree-item"));
-        setTreeCollapsedAll(items, !outlineTreeIsCollapsed, items.length < 100);
-
-        outlineTreeCollapse.classList.toggle("is-collapsed");
-        outlineTreeCollapse.querySelector("iconify-icon").setAttribute("icon", outlineTreeIsCollapsed ? "ph:arrows-out-line-horizontal-bold" : "ph:arrows-in-line-horizontal-bold");
-      });
-
-      // start with all closed
-      setupOnNode.querySelectorAll(".tree-container .tree-item").forEach(function(item) {
-        if (item.classList.contains("is-collapsed")) setTreeCollapsed(item, true, false);
-      });
-
-      // make sure the icons match their starting collaped state
-      setupOnNode.querySelectorAll(".tree-container > .tree-header > .collapse-tree-button").forEach(function(item) {
-        if (item.classList.contains("is-collapsed")) {
-          item.querySelector("iconify-icon").setAttribute("icon", "ph:arrows-out-line-horizontal-bold");
-        } else {
-          item.querySelector("iconify-icon").setAttribute("icon", "ph:arrows-in-line-horizontal-bold");
-        }
-      });
-    }
-
-    function setupCallouts(setupOnNode) {
-      // MAKE CALLOUTS COLLAPSIBLE
-      // if the callout title is clicked, toggle the display of .callout-content
-      setupOnNode.querySelectorAll(".callout.is-collapsible .callout-title").forEach(function(element) {
-        element.addEventListener("click", function() {
-          var parent = this.parentElement;
-          var isCollapsed = parent.classList.contains("is-collapsed");
-
-          parent.classList.toggle("is-collapsed");
-          element.querySelector(".callout-fold").classList.toggle("is-collapsed");
-
-          slideToggle(parent.querySelector(".callout-content"), 100);
-        });
-      });
-
-    }
-
-    function setupCheckboxes(setupOnNode) {
-      // Fix checkboxed toggling .is-checked
-      setupOnNode.querySelectorAll(".task-list-item-checkbox").forEach(function(element) {
-        element.addEventListener("click", function() {
-          var parent = this.parentElement;
-          parent.classList.toggle("is-checked");
-          parent.setAttribute("data-task", parent.classList.contains("is-checked") ? "x" : " ");
-        });
-      });
-
-      setupOnNode.querySelectorAll(`.plugin-tasks-list-item input[type="checkbox"]`).forEach(function(checkbox) {
-        checkbox.checked = checkbox.parentElement.classList.contains("is-checked");
-      });
-
-      setupOnNode.querySelectorAll('.kanban-plugin__item.is-complete').forEach(function(checkbox) {
-        checkbox.querySelector('input[type="checkbox"]').checked = true;
-      });
-    }
-
-    function setupCanvas(setupOnNode) {
-      let focusedNode = null;
-
-      // make canvas nodes selectable
-      setupOnNode.querySelectorAll(".canvas-node-content-blocker").forEach(function(element) {
-        element.addEventListener("click", function() {
-          var parent = this.parentElement.parentElement;
-          parent.classList.toggle("is-focused");
-          this.style.display = "none";
-
-          if (focusedNode) {
-            focusedNode.classList.remove("is-focused");
-            focusedNode.querySelector(".canvas-node-content-blocker").style.display = "";
-          }
-
-          focusedNode = parent;
-        });
-      });
+    // //#region Helpers
+
+    // function getAbsoluteRootPath() {
+    //   if (typeof rootPath == 'undefined') setupRootPath(document);
+    //   return new URL(window.location.href + "/../" + rootPath).pathname;
+    // }
+
+    // function getURLPath(url = window.location.pathname) {
+    //   let absoluteRoot = getAbsoluteRootPath();
+    //   let pathname = url.substring(absoluteRoot.length);
+    //   return pathname;
+    // }
+
+    // function getURLRootPath(url = window.location.pathname) {
+    //   let path = getURLPath(url);
+    //   let splitPath = path.split("/");
+    //   let rootPath = "";
+    //   for (let i = 0; i < splitPath.length - 1; i++) {
+    //     rootPath += "../";
+    //   }
+    //   return rootPath;
+    // }
+
+    // async function setTreeCollapsed(element, collapsed, animate = true) {
+    //   if 
+    //   (!element || !element.classList.contains("mod-collapsible")) return;
+
+    //   let children = element.querySelector(".tree-item-children");
+
+    //   if (collapsed) {
+    //     element.classList.add("is-collapsed");
+    //     if (animate) slideUp(children, 100);
+    //     else children.style.display = "none";
+    //   } else {
+    //     element.classList.remove("is-collapsed");
+    //     if (animate) slideDown(children, 100);
+    //     else children.style.removeProperty("display");
+    //   }
+    // }
+
+    // async function setTreeCollapsedAll(elements, collapsed, animate = true) {
+    //   let childrenList = [];
+    //   elements.forEach(async element => {
+    //     if (!element || !element.classList.contains("mod-collapsible")) return;
+
+    //     let children = element.querySelector(".tree-item-children");
+
+    //     if (collapsed) {
+    //       element.classList.add("is-collapsed");
+    //     } else {
+    //       element.classList.remove("is-collapsed");
+    //     }
+
+    //     childrenList.push(children);
+    //   });
+
+    //   if (collapsed) {
+    //     if (animate) slideUpAll(childrenList, 100);
+    //     else childrenList.forEach(async children => children.style.display = "none");
+    //   } else {
+    //     if (animate) slideDownAll(childrenList, 100);
+    //     else childrenList.forEach(async children => children.style.removeProperty("display"));
+    //   }
+    // }
+
+    // function toggleTreeCollapsed(element) {
+    //   if (!element) return;
+    //   setTreeCollapsed(element, !element.classList.contains("is-collapsed"));
+    // }
+
+    // function toggleTreeCollapsedAll(elements) {
+    //   if (!elements) return;
+    //   setTreeCollapsedAll(elements, !elements[0].classList.contains("is-collapsed"));
+    // }
+
+    // function getHeaderEl(headerDiv) {
+    //   let possibleChildHeader = headerDiv.firstChild;
+    //   let isHeader = false;
+
+    //   while (possibleChildHeader != null) {
+    //     isHeader = possibleChildHeader ? /[Hh][1-6]/g.test(possibleChildHeader.tagName) : false;
+    //     if (isHeader) break;
+
+    //     possibleChildHeader = possibleChildHeader.nextElementSibling;
+    //   }
+
+    //   return possibleChildHeader;
+    // }
+
+    // function getPreviousHeader(headerDiv) {
+    //   let possibleParent = headerDiv.previousElementSibling;
+    //   let isHeader = false;
+
+    //   while (possibleParent != null) {
+    //     let possibleChildHeader = getHeaderEl(possibleParent);
+    //     isHeader = possibleChildHeader ? /[Hh][1-6]/g.test(possibleChildHeader.tagName) : false;
+    //     if (isHeader) break;
+
+    //     possibleParent = possibleParent.previousElementSibling;
+    //   }
+
+    //   return possibleParent;
+    // }
+
+    // function setHeaderOpen(headerDiv, open, openParents = true) {
+    //   if (headerDiv.tagName != "DIV" || !getHeaderEl(headerDiv)) {
+    //     console.error("setHeaderOpen() must be called with a header div");
+    //     return;
+    //   }
+
+    //   // let selector = getHeadingContentsSelector(header);
+    //   if (open) {
+    //     headerDiv.classList.remove("is-collapsed");
+    //     headerDiv.style.display = "";
+    //   }
+    //   if (!open) {
+    //     headerDiv.classList.add("is-collapsed");
+    //   }
+
+    //   let headerEl = getHeaderEl(headerDiv);
+
+    //   let childHeaders = [];
+
+    //   let possibleChild = headerDiv.nextElementSibling;
+
+    //   // loop through next siblings showing/ hiding children until we reach a header of the same or lower level
+    //   while (possibleChild != null) {
+    //     let possibleChildHeader = getHeaderEl(possibleChild);
+
+    //     if (possibleChildHeader) {
+    //       // if header is a sibling of this header then break
+    //       if (possibleChildHeader.tagName <= headerEl.tagName) break;
+
+    //       // save child headers to be re closed afterwards
+    //       childHeaders.push(possibleChild);
+    //     }
+
+    //     if (!open) possibleChild.style.display = "none";
+    //     else possibleChild.style.display = "";
+
+    //     possibleChild = possibleChild.nextElementSibling;
+    //   }
+
+    //   if (open) {
+    //     // if we are opening the header then we need to make sure that all closed child headers stay closed
+    //     childHeaders.forEach(function(item) {
+    //       if (item.classList.contains("is-collapsed")) {
+    //         setHeaderOpen(item, false);
+    //       }
+    //     });
+
+    //     // if we are opening the header then we need to make sure that all parent headers are open
+    //     if (openParents) {
+    //       let previousHeader = getPreviousHeader(headerDiv);
+
+    //       while (previousHeader != null) {
+    //         let previousHeaderEl = getHeaderEl(previousHeader);
+
+    //         if (previousHeaderEl.tagName < headerEl.tagName) {
+    //           // if header is a parent of this header then unhide
+    //           setHeaderOpen(previousHeader, true);
+    //           break;
+    //         }
+
+    //         previousHeader = getPreviousHeader(previousHeader);
+    //       }
+    //     }
+    //   }
+    // }
+
+    // let slideUp = (target, duration = 500) => {
+
+    //   target.style.transitionProperty = 'height, margin, padding';
+    //   target.style.transitionDuration = duration + 'ms';
+    //   target.style.boxSizing = 'border-box';
+    //   target.style.height = target.offsetHeight + 'px';
+    //   target.offsetHeight;
+    //   target.style.overflow = 'hidden';
+    //   target.style.height = 0;
+    //   target.style.paddingTop = 0;
+    //   target.style.paddingBottom = 0;
+    //   target.style.marginTop = 0;
+    //   target.style.marginBottom = 0;
+    //   window.setTimeout(async () => {
+    //     target.style.display = 'none';
+    //     target.style.removeProperty('height');
+    //     target.style.removeProperty('padding-top');
+    //     target.style.removeProperty('padding-bottom');
+    //     target.style.removeProperty('margin-top');
+    //     target.style.removeProperty('margin-bottom');
+    //     target.style.removeProperty('overflow');
+    //     target.style.removeProperty('transition-duration');
+    //     target.style.removeProperty('transition-property');
+    //   }, duration);
+    // }
+
+    // let slideUpAll = (targets, duration = 500) => {
+
+    //   targets.forEach(async target => {
+    //     target.style.transitionProperty = 'height, margin, padding';
+    //     target.style.transitionDuration = duration + 'ms';
+    //     target.style.boxSizing = 'border-box';
+    //     target.style.height = target.offsetHeight + 'px';
+    //     target.offsetHeight;
+    //     target.style.overflow = 'hidden';
+    //     target.style.height = 0;
+    //     target.style.paddingTop = 0;
+    //     target.style.paddingBottom = 0;
+    //     target.style.marginTop = 0;
+    //     target.style.marginBottom = 0;
+    //   });
+
+    //   window.setTimeout(async () => {
+    //     targets.forEach(async target => {
+    //       target.style.display = 'none';
+    //       target.style.removeProperty('height');
+    //       target.style.removeProperty('padding-top');
+    //       target.style.removeProperty('padding-bottom');
+    //       target.style.removeProperty('margin-top');
+    //       target.style.removeProperty('margin-bottom');
+    //       target.style.removeProperty('overflow');
+    //       target.style.removeProperty('transition-duration');
+    //       target.style.removeProperty('transition-property');
+    //     });
+    //   }, duration);
+    // }
+
+    // let slideDown = (target, duration = 500) => {
+
+    //   target.style.removeProperty('display');
+    //   let display = window.getComputedStyle(target).display;
+    //   if (display === 'none') display = 'block';
+    //   target.style.display = display;
+    //   let height = target.offsetHeight;
+    //   target.style.overflow = 'hidden';
+    //   target.style.height = 0;
+    //   target.style.paddingTop = 0;
+    //   target.style.paddingBottom = 0;
+    //   target.style.marginTop = 0;
+    //   target.style.marginBottom = 0;
+    //   target.offsetHeight;
+    //   target.style.boxSizing = 'border-box';
+    //   target.style.transitionProperty = "height, margin, padding";
+    //   target.style.transitionDuration = duration + 'ms';
+    //   target.style.height = height + 'px';
+    //   target.style.removeProperty('padding-top');
+    //   target.style.removeProperty('padding-bottom');
+    //   target.style.removeProperty('margin-top');
+    //   target.style.removeProperty('margin-bottom');
+    //   window.setTimeout(async () => {
+    //     target.style.removeProperty('height');
+    //     target.style.removeProperty('overflow');
+    //     target.style.removeProperty('transition-duration');
+    //     target.style.removeProperty('transition-property');
+    //   }, duration);
+    // }
+
+    // let slideDownAll = (targets, duration = 500) => {
+
+    //   targets.forEach(async target => {
+    //     target.style.removeProperty('display');
+    //     let display = window.getComputedStyle(target).display;
+    //     if (display === 'none') display = 'block';
+    //     target.style.display = display;
+    //     let height = target.offsetHeight;
+    //     target.style.overflow = 'hidden';
+    //     target.style.height = 0;
+    //     target.style.paddingTop = 0;
+    //     target.style.paddingBottom = 0;
+    //     target.style.marginTop = 0;
+    //     target.style.marginBottom = 0;
+    //     target.offsetHeight;
+    //     target.style.boxSizing = 'border-box';
+    //     target.style.transitionProperty = "height, margin, padding";
+    //     target.style.transitionDuration = duration + 'ms';
+    //     target.style.height = height + 'px';
+    //     target.style.removeProperty('padding-top');
+    //     target.style.removeProperty('padding-bottom');
+    //     target.style.removeProperty('margin-top');
+    //     target.style.removeProperty('margin-bottom');
+    //   });
+
+    //   window.setTimeout(async () => {
+    //     targets.forEach(async target => {
+    //       target.style.removeProperty('height');
+    //       target.style.removeProperty('overflow');
+    //       target.style.removeProperty('transition-duration');
+    //       target.style.removeProperty('transition-property');
+    //     });
+    //   }, duration);
+    // }
+
+    // var slideToggle = (target, duration = 500) => {
+    //   if (window.getComputedStyle(target).display === 'none') {
+    //     return slideDown(target, duration);
+    //   } else {
+    //     return slideUp(target, duration);
+    //   }
+    // }
+
+    // var slideToggleAll = (targets, duration = 500) => {
+    //   if (window.getComputedStyle(targets[0]).display === 'none') {
+    //     return slideDownAll(targets, duration);
+    //   } else {
+    //     return slideUpAll(targets, duration);
+    //   }
+    // }
+
+    // //#endregion
+
+    // async function loadDocument(url, pushHistory = true, scrollTo = true) {
+    //   console.log("Loading document: " + url);
+
+    //   // change the active file
+    //   setActiveDocument(url, scrollTo, pushHistory);
+
+    //   let response;
+
+    //   // if(typeof embeddedDocuments == 'undefined')
+    //   // {
+    //   try {
+    //     response = await fetch(url);
+    //   } catch (error) {
+    //     console.log("Cannot use fetch API (likely due to CORS), just loading the page normally.");
+    //     window.location.assign(url);
+    //     return;
+    //   }
+    //   // }
+    //   // else
+    //   // {
+    //   // 	response = new Response(embeddedDocuments[url], {status: 200, statusText: "OK"});
+    //   // }
+
+    //   let doc = document.implementation.createHTMLDocument();
+
+    //   if (response.ok) {
+    //     let html = (await response.text()).replaceAll("<!DOCTYPE html>", "").replaceAll("<html>", "").replaceAll("</html>", "");
+    //     doc.documentElement.innerHTML = html;
+
+    //     // copy document content and outline tree
+    //     document.querySelector(".document-container").innerHTML = doc.querySelector(".document-container").innerHTML;
+    //     document.querySelector(".outline-tree").innerHTML = doc.querySelector(".outline-tree").innerHTML;
+
+    //     // if the url has a heading, scroll to it
+    //     let splitURL = url.split("#");
+    //     let pathnameTarget = splitURL[0] ?? url;
+    //     let headingTarget = splitURL.length > 1 ? splitURL[1] : null;
+    //     if (headingTarget) document.getElementById(headingTarget).scrollIntoView();
+
+    //     // Change the root path to match the match from the new page
+    //     setupRootPath(doc);
+
+    //     // initialize events on the new page
+    //     initializePage(document.querySelector(".document-container"));
+    //     initializePage(document.querySelector(".outline-tree"));
+
+    //     document.title = doc.title;
+    //   } else {
+    //     // if the page is not able to load instead add a header saying the page doesn't exist
+    //     document.querySelector(".markdown-preview-view").innerHTML =
+    //       `
+		// <div>
+		// 	<center style='position: relative; transform: translateY(20vh); width: 100%; text-align: center;'>
+		// 		<h1 style>Page Not Found</h1>
+		// 	</center>
+		// </div>
+		// `;
+
+    //     document.querySelector(".outline-tree").innerHTML = "";
+
+    //     console.log("Page not found: " + getAbsoluteRootPath() + url);
+    //     let newRootPath = getURLRootPath(getAbsoluteRootPath() + url);
+    //     rootPath = newRootPath;
+    //     document.querySelector("base").href = newRootPath;
+
+    //     document.title = "Page Not Found";
+    //   }
+
+    //   return doc;
+    // }
+
+    // function setActiveDocument(url, scrollTo = true, pushHistory = true) {
+    //   let pathnameTarget = url.split("#")[0] ?? url; // path with no header
+
+    //   // switch active file in file tree
+    //   document.querySelector(".tree-item.mod-active")?.classList.remove("mod-active");
+    //   let treeItems = Array.from(document.querySelectorAll(".tree-item > .tree-item-contents > .tree-item-link"));
+    //   let treeItem = undefined;
+    //   for (let item of treeItems) {
+    //     if (item.getAttribute("href") == url) {
+    //       let parent = item.parentElement.parentElement;
+
+    //       parent.classList.add("mod-active");
+    //       treeItem = parent;
+
+    //       while (parent.hasAttribute("data-depth")) {
+    //         setTreeCollapsed(parent, false, false);
+    //         parent = parent.parentElement.parentElement;
+    //       }
+
+    //       continue;
+    //     }
+    //   }
+
+    //   if (scrollTo) treeItem?.scrollIntoView({
+    //     block: "center",
+    //     inline: "nearest"
+    //   });
+
+    //   // set the active file in th graph view
+    //   if (typeof nodes != 'undefined' && window.renderWorker) {
+    //     let activeNode = nodes?.paths.findIndex(function(item) {
+    //       return item.endsWith(pathnameTarget);
+    //     }) ?? -1;
+
+    //     if (activeNode >= 0) {
+    //       window.renderWorker.activeNode = activeNode;
+    //     }
+    //   }
+
+    //   if (pushHistory && window.location.protocol != "file:") window.history.pushState({
+    //     path: pathnameTarget
+    //   }, '', pathnameTarget);
+    // }
+
+    // //#region Initialization
+    // function setupThemeToggle(setupOnNode) {
+    //   if (localStorage.getItem("theme_toggle") != null) {
+    //     setThemeToggle(localStorage.getItem("theme_toggle") == "true");
+    //   }
+
+    //   // var lastScheme = "theme-dark";
+    //   // change theme to match current system theme
+    //   // if (localStorage.getItem("theme_toggle") == null && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)
+    //   // {
+    //   // 	setThemeToggle(true);
+    //   // 	lastScheme = "theme-light";
+    //   // }
+    //   // if (localStorage.getItem("theme_toggle") == null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    //   // {
+    //   // 	setThemeToggle(true);
+    //   // 	lastScheme = "theme-dark";
+    //   // }
+
+    //   // set initial toggle state based on body theme class
+    //   if (document.body.classList.contains("theme-light")) {
+    //     setThemeToggle(true);
+    //   } else {
+    //     setThemeToggle(false);
+    //   }
+
+    //   function setThemeToggle(state, instant = false) {
+    //     let toggle = document.querySelector(".theme-toggle-input");
+
+    //     toggle.checked = state;
+
+    //     if (instant) {
+    //       var oldTransition = document.body.style.transition;
+    //       document.body.style.transition = "none";
+    //     }
+
+    //     if (!toggle.classList.contains("is-checked") && state) {
+    //       toggle.classList.add("is-checked");
+    //     } else if (toggle.classList.contains("is-checked") && !state) {
+    //       toggle.classList.remove("is-checked");
+    //     }
+
+    //     if (!state) {
+    //       if (document.body.classList.contains("theme-light")) {
+    //         document.body.classList.remove("theme-light");
+    //       }
+
+    //       if (!document.body.classList.contains("theme-dark")) {
+    //         document.body.classList.add("theme-dark");
+    //       }
+    //     } else {
+    //       if (document.body.classList.contains("theme-dark")) {
+    //         document.body.classList.remove("theme-dark");
+    //       }
+
+    //       if (!document.body.classList.contains("theme-light")) {
+    //         document.body.classList.add("theme-light");
+    //       }
+    //     }
+
+    //     if (instant) {
+    //       setTimeout(function() {
+    //         document.body.style.transition = oldTransition;
+    //       }, 100);
+    //     }
+
+    //     localStorage.setItem("theme_toggle", state ? "true" : "false");
+    //   }
+
+    //   setupOnNode.querySelector(".theme-toggle-input")?.addEventListener("change", event => {
+    //     console.log("Theme toggle changed to: " + !(localStorage.getItem("theme_toggle") == "true"));
+    //     setThemeToggle(!(localStorage.getItem("theme_toggle") == "true"));
+    //   });
+
+    //   // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => 
+    //   // {
+    //   // 	// return if we are printing
+    //   // 	if (window.matchMedia('print').matches)
+    //   // 	{
+    //   // 		printing = true;
+    //   // 		return;
+    //   // 	}
+
+    //   //     let newColorScheme = event.matches ? "theme-dark" : "theme-light";
+
+    //   // 	if (newColorScheme == lastScheme) return;
+
+    //   //     if (newColorScheme == "theme-dark")
+    //   //     {
+    //   // 		setThemeToggle(false);
+    //   //     }
+
+    //   //     if (newColorScheme == "theme-light")
+    //   //     {
+    //   // 		setThemeToggle(true);
+    //   //     }
+
+    //   // 	lastScheme = newColorScheme;
+    //   // });
+
+    // }
+
+    // function setupHeaders(setupOnNode) {
+    //   // MAKE HEADERS COLLAPSIBLE
+    //   setupOnNode.querySelectorAll(".heading-collapse-indicator").forEach(function(element) {
+    //     element.addEventListener("click", function() {
+    //       var isOpen = !this.parentElement.parentElement.classList.contains("is-collapsed");
+    //       setHeaderOpen(this.parentElement.parentElement, !isOpen);
+    //     });
+    //   });
+
+    //   // unfold header when an internal link that points to that header is clicked
+    //   setupOnNode.querySelectorAll("a.internal-link, a.tree-item-link").forEach(function(element) {
+    //     element.addEventListener("click", function(event) {
+    //       event.preventDefault();
+    //       let target = this.getAttribute("href");
+
+    //       // if the target is a header uncollapse it
+    //       if (target.startsWith("#")) {
+    //         console.log("Uncollapsing header: " + target);
+    //         let header = document.getElementById(target.substring(1));
+    //         setHeaderOpen(header.parentElement, true);
+    //       }
+    //     });
+    //   });
+    // }
+
+    // function setupTrees(setupOnNode) {
+    //   const fileTreeItems = Array.from(setupOnNode.querySelectorAll(".tree-container.file-tree .tree-item"));
+
+    //   setupOnNode.querySelectorAll(".tree-item-contents > .collapse-icon").forEach(function(item) {
+    //     item.addEventListener("click", function() {
+    //       toggleTreeCollapsed(item.parentElement.parentElement);
+    //     });
+    //   });
+
+    //   let fileTreeCollapse = setupOnNode.querySelector(".tree-container.file-tree .collapse-tree-button");
+    //   if (fileTreeCollapse) fileTreeCollapse.addEventListener("click", async function() {
+    //     let fileTreeIsCollapsed = fileTreeCollapse.classList.contains("is-collapsed");
+
+    //     setTreeCollapsedAll(fileTreeItems, !fileTreeIsCollapsed, fileTreeItems.length < 100);
+
+    //     fileTreeCollapse.classList.toggle("is-collapsed");
+    //     fileTreeCollapse.querySelector("iconify-icon").setAttribute("icon", fileTreeIsCollapsed ? "ph:arrows-out-line-horizontal-bold" : "ph:arrows-in-line-horizontal-bold");
+    //   });
+
+
+    //   let outlineTreeCollapse = setupOnNode.querySelector(".tree-container.outline-tree .collapse-tree-button");
+    //   if (outlineTreeCollapse) outlineTreeCollapse.addEventListener("click", async function() {
+    //     let outlineTreeIsCollapsed = outlineTreeCollapse.classList.contains("is-collapsed");
+
+    //     let items = Array.from(outlineTreeCollapse.parentElement.parentElement.querySelectorAll(".tree-item"));
+    //     setTreeCollapsedAll(items, !outlineTreeIsCollapsed, items.length < 100);
+
+    //     outlineTreeCollapse.classList.toggle("is-collapsed");
+    //     outlineTreeCollapse.querySelector("iconify-icon").setAttribute("icon", outlineTreeIsCollapsed ? "ph:arrows-out-line-horizontal-bold" : "ph:arrows-in-line-horizontal-bold");
+    //   });
+
+    //   // start with all closed
+    //   setupOnNode.querySelectorAll(".tree-container .tree-item").forEach(function(item) {
+    //     if (item.classList.contains("is-collapsed")) setTreeCollapsed(item, true, false);
+    //   });
+
+    //   // make sure the icons match their starting collaped state
+    //   setupOnNode.querySelectorAll(".tree-container > .tree-header > .collapse-tree-button").forEach(function(item) {
+    //     if (item.classList.contains("is-collapsed")) {
+    //       item.querySelector("iconify-icon").setAttribute("icon", "ph:arrows-out-line-horizontal-bold");
+    //     } else {
+    //       item.querySelector("iconify-icon").setAttribute("icon", "ph:arrows-in-line-horizontal-bold");
+    //     }
+    //   });
+    // }
+
+    // function setupCallouts(setupOnNode) {
+    //   // MAKE CALLOUTS COLLAPSIBLE
+    //   // if the callout title is clicked, toggle the display of .callout-content
+    //   setupOnNode.querySelectorAll(".callout.is-collapsible .callout-title").forEach(function(element) {
+    //     element.addEventListener("click", function() {
+    //       var parent = this.parentElement;
+    //       var isCollapsed = parent.classList.contains("is-collapsed");
+
+    //       parent.classList.toggle("is-collapsed");
+    //       element.querySelector(".callout-fold").classList.toggle("is-collapsed");
+
+    //       slideToggle(parent.querySelector(".callout-content"), 100);
+    //     });
+    //   });
+
+    // }
+
+    // function setupCheckboxes(setupOnNode) {
+    //   // Fix checkboxed toggling .is-checked
+    //   setupOnNode.querySelectorAll(".task-list-item-checkbox").forEach(function(element) {
+    //     element.addEventListener("click", function() {
+    //       var parent = this.parentElement;
+    //       parent.classList.toggle("is-checked");
+    //       parent.setAttribute("data-task", parent.classList.contains("is-checked") ? "x" : " ");
+    //     });
+    //   });
+
+    //   setupOnNode.querySelectorAll(`.plugin-tasks-list-item input[type="checkbox"]`).forEach(function(checkbox) {
+    //     checkbox.checked = checkbox.parentElement.classList.contains("is-checked");
+    //   });
+
+    //   setupOnNode.querySelectorAll('.kanban-plugin__item.is-complete').forEach(function(checkbox) {
+    //     checkbox.querySelector('input[type="checkbox"]').checked = true;
+    //   });
+    // }
+
+    // function setupCanvas(setupOnNode) {
+    //   let focusedNode = null;
+
+    //   // make canvas nodes selectable
+    //   setupOnNode.querySelectorAll(".canvas-node-content-blocker").forEach(function(element) {
+    //     element.addEventListener("click", function() {
+    //       var parent = this.parentElement.parentElement;
+    //       parent.classList.toggle("is-focused");
+    //       this.style.display = "none";
+
+    //       if (focusedNode) {
+    //         focusedNode.classList.remove("is-focused");
+    //         focusedNode.querySelector(".canvas-node-content-blocker").style.display = "";
+    //       }
+
+    //       focusedNode = parent;
+    //     });
+    //   });
 
       // make canvas node deselect when clicking outside
       // document.addEventListener("click", function (event) 
@@ -25230,158 +25000,158 @@ settings:
       // 	}
       // });
 
-    }
+    // |}
 
-    function setupCodeblocks(setupOnNode) {
-      // make code snippet block copy button copy the code to the clipboard
-      setupOnNode.querySelectorAll(".copy-code-button").forEach(function(element) {
-        element.addEventListener("click", function() {
-          var code = this.parentElement.querySelector("code").textContent;
-          navigator.clipboard.writeText(code);
-          this.textContent = "Copied!";
-          // set a timeout to change the text back
-          setTimeout(function() {
-            setupOnNode.querySelectorAll(".copy-code-button").forEach(function(button) {
-              button.textContent = "Copy";
-            });
-          }, 2000);
-        });
-      });
-    }
+    // function setupCodeblocks(setupOnNode) {
+    //   // make code snippet block copy button copy the code to the clipboard
+    //   setupOnNode.querySelectorAll(".copy-code-button").forEach(function(element) {
+    //     element.addEventListener("click", function() {
+    //       var code = this.parentElement.querySelector("code").textContent;
+    //       navigator.clipboard.writeText(code);
+    //       this.textContent = "Copied!";
+    //       // set a timeout to change the text back
+    //       setTimeout(function() {
+    //         setupOnNode.querySelectorAll(".copy-code-button").forEach(function(button) {
+    //           button.textContent = "Copy";
+    //         });
+    //       }, 2000);
+    //     });
+    //   });
+    // }
 
-    function setupLinks(setupOnNode) {
-      setupOnNode.querySelectorAll(".internal-link, .footnote-link, .tree-item-link").forEach(function(link) {
-        link.addEventListener("click", function(event) {
-          let target = link.getAttribute("href");
-          event.preventDefault();
+    // function setupLinks(setupOnNode) {
+    //   setupOnNode.querySelectorAll(".internal-link, .footnote-link, .tree-item-link").forEach(function(link) {
+    //     link.addEventListener("click", function(event) {
+    //       let target = link.getAttribute("href");
+    //       event.preventDefault();
 
-          // this is linking to a different page
-          if (!target.startsWith("#")) {
-            // load doc, if it is a tree link then don't scroll to the active doc in the file tree
-            loadDocument(target, true, !link.classList.contains("tree-item-link"));
-            return;
-          } else {
-            let headerTarget = document.getElementById(target.substring(1));
-            setHeaderOpen(headerTarget.parentElement, true);
-            headerTarget.scrollIntoView();
-          }
-        });
-      });
+    //       // this is linking to a different page
+    //       if (!target.startsWith("#")) {
+    //         // load doc, if it is a tree link then don't scroll to the active doc in the file tree
+    //         loadDocument(target, true, !link.classList.contains("tree-item-link"));
+    //         return;
+    //       } else {
+    //         let headerTarget = document.getElementById(target.substring(1));
+    //         setHeaderOpen(headerTarget.parentElement, true);
+    //         headerTarget.scrollIntoView();
+    //       }
+    //     });
+    //   });
 
-      window.onpopstate = function(event) {
-        loadDocument(getURLPath(), false);
-      }
-    }
+    //   window.onpopstate = function(event) {
+    //     loadDocument(getURLPath(), false);
+    //   }
+    // }
 
 
-    let sidebarWidth = undefined;
-    let lineWidth = undefined;
+    // let sidebarWidth = undefined;
+    // let lineWidth = undefined;
 
-    function setupResize(setupOnNode) {
-      if (setupOnNode != document) return;
+    // function setupResize(setupOnNode) {
+    //   if (setupOnNode != document) return;
 
-      function updateSidebars() {
-        let rightSidebar = document.querySelector(".sidebar-right");
-        let leftSidebar = document.querySelector(".sidebar-left");
-        let sidebarCount = (rightSidebar ? 1 : 0) + (leftSidebar ? 1 : 0);
+    //   function updateSidebars() {
+    //     let rightSidebar = document.querySelector(".sidebar-right");
+    //     let leftSidebar = document.querySelector(".sidebar-left");
+    //     let sidebarCount = (rightSidebar ? 1 : 0) + (leftSidebar ? 1 : 0);
 
-        if (sidebarCount == 0) return;
+    //     if (sidebarCount == 0) return;
 
-        if (!sidebarWidth) sidebarWidth = Math.max(rightSidebar?.clientWidth, leftSidebar?.clientWidth);
+    //     if (!sidebarWidth) sidebarWidth = Math.max(rightSidebar?.clientWidth, leftSidebar?.clientWidth);
 
-        if (!lineWidth) {
-          let docWidthTestEl = document.createElement("div");
-          document.querySelector(".markdown-preview-view").appendChild(docWidthTestEl);
-          docWidthTestEl.style.width = "var(--line-width)";
-          docWidthTestEl.style.minWidth = "var(--line-width)";
-          docWidthTestEl.style.maxWidth = "var(--line-width)";
-          lineWidth = docWidthTestEl.clientWidth;
-          docWidthTestEl.remove();
-        }
+  //       if (!lineWidth) {
+  //         let docWidthTestEl = document.createElement("div");
+  //         document.querySelector(".markdown-preview-view").appendChild(docWidthTestEl);
+  //         docWidthTestEl.style.width = "var(--line-width)";
+  //         docWidthTestEl.style.minWidth = "var(--line-width)";
+  //         docWidthTestEl.style.maxWidth = "var(--line-width)";
+  //         lineWidth = docWidthTestEl.clientWidth;
+  //         docWidthTestEl.remove();
+  //       }
 
-        let letHideRightThreshold = sidebarWidth * sidebarCount + lineWidth / 2;
+  //       let letHideRightThreshold = sidebarWidth * sidebarCount + lineWidth / 2;
 
-        if (window.innerWidth < letHideRightThreshold) {
-          rightSidebar.style.display = "none";
-        } else {
-          rightSidebar.style.display = "";
-        }
+  //       if (window.innerWidth < letHideRightThreshold) {
+  //         rightSidebar.style.display = "none";
+  //       } else {
+  //         rightSidebar.style.display = "";
+  //       }
 
-        let letHideLeftThreshold = lineWidth / 2 + sidebarWidth;
+  //       let letHideLeftThreshold = lineWidth / 2 + sidebarWidth;
 
-        if (window.innerWidth < letHideLeftThreshold) {
-          leftSidebar.style.display = "none";
-        } else {
-          leftSidebar.style.display = "";
-        }
-      }
+  //       if (window.innerWidth < letHideLeftThreshold) {
+  //         leftSidebar.style.display = "none";
+  //       } else {
+  //         leftSidebar.style.display = "";
+  //       }
+  //     }
 
-      window.addEventListener("resize", function() {
-        updateSidebars();
-      });
+  //     window.addEventListener("resize", function() {
+  //       updateSidebars();
+  //     });
 
-      updateSidebars();
-    }
+  //     updateSidebars();
+  //   }
 
-    function setupRootPath(fromDocument) {
-      let basePath = fromDocument.querySelector("#root-path").getAttribute("root-path");
-      document.querySelector("base").href = basePath;
-      document.querySelector("#root-path").setAttribute("root-path", basePath);
-      rootPath = basePath;
-    }
+  //   function setupRootPath(fromDocument) {
+  //     let basePath = fromDocument.querySelector("#root-path").getAttribute("root-path");
+  //     document.querySelector("base").href = basePath;
+  //     document.querySelector("#root-path").setAttribute("root-path", basePath);
+  //     rootPath = basePath;
+  //   }
 
-    let touchDrag = false;
+  //   let touchDrag = false;
 
-    function initializePage(setupOnNode) {
-      setupThemeToggle(setupOnNode);
-      setupHeaders(setupOnNode);
-      setupTrees(setupOnNode);
-      setupCallouts(setupOnNode);
-      setupCheckboxes(setupOnNode);
-      setupCanvas(setupOnNode);
-      setupCodeblocks(setupOnNode);
-      setupLinks(setupOnNode);
-      setupResize(setupOnNode);
+  //   function initializePage(setupOnNode) {
+  //     setupThemeToggle(setupOnNode);
+  //     setupHeaders(setupOnNode);
+  //     setupTrees(setupOnNode);
+  //     setupCallouts(setupOnNode);
+  //     setupCheckboxes(setupOnNode);
+  //     setupCanvas(setupOnNode);
+  //     setupCodeblocks(setupOnNode);
+  //     setupLinks(setupOnNode);
+  //     setupResize(setupOnNode);
 
-      setupOnNode.querySelectorAll("*").forEach(function(element) {
-        element.addEventListener("touchend", function(event) {
-          if (touchDrag) {
-            touchDrag = false;
-            event.stopPropagation();
-            return;
-          }
+  //     setupOnNode.querySelectorAll("*").forEach(function(element) {
+  //       element.addEventListener("touchend", function(event) {
+  //         if (touchDrag) {
+  //           touchDrag = false;
+  //           event.stopPropagation();
+  //           return;
+  //         }
 
-          if (element instanceof HTMLElement) element.click();
-        });
-      });
+  //         if (element instanceof HTMLElement) element.click();
+  //       });
+  //     });
 
-      if (setupOnNode == document) {
-        document.body.addEventListener("touchmove", function(event) {
-          event.stopImmediatePropagation();
-          touchDrag = true;
-        });
+  //     if (setupOnNode == document) {
+  //       document.body.addEventListener("touchmove", function(event) {
+  //         event.stopImmediatePropagation();
+  //         touchDrag = true;
+  //       });
 
-        setupRootPath(document);
-        setActiveDocument(getURLPath());
-      }
-    }
+  //       setupRootPath(document);
+  //       setActiveDocument(getURLPath());
+  //     }
+  //   }
 
-    function initializeForFileProtocol() {
-      let graphEl = document.querySelector(".graph-view-placeholder");
-      if (graphEl) {
-        console.log("Running locally, skipping graph view initialization and hiding graph.");
-        graphEl.style.display = "none";
-        graphEl.previousElementSibling.style.display = "none"; // hide the graph's header
-      }
-    }
+  //   function initializeForFileProtocol() {
+  //     let graphEl = document.querySelector(".graph-view-placeholder");
+  //     if (graphEl) {
+  //       console.log("Running locally, skipping graph view initialization and hiding graph.");
+  //       graphEl.style.display = "none";
+  //       graphEl.previousElementSibling.style.display = "none"; // hide the graph's header
+  //     }
+  //   }
 
-    //#endregion
+  //   //#endregion
 
-    window.onload = function() {
-      if (window.location.protocol == "file:") initializeForFileProtocol();
-      initializePage(document);
-    }
-  </script>
+  //   window.onload = function() {
+  //     if (window.location.protocol == "file:") initializeForFileProtocol();
+  //     initializePage(document);
+  //   }
+  // </script>
 
 </head>
 
