@@ -1,0 +1,213 @@
+<html>
+  <head>
+    <style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }</style>
+
+  </head>
+  <body>
+    <h1 id="amazon-reviews-classification-and-rating-predictions">Amazon Reviews, Classification and Rating Predictions</h1>
+<p>Working with one of my fellow enthusiast Data scientists I evaluated several models to classify the free text Amazon predictions into two classes: positive and negative, and another few models to predict the star rating for these same reviews. This project uses the <strong>Multilingual Amazon Reviews Corpus</strong>, and the full notebook can be found in this <a href="https://github.com/valeriaortizl/amazon_ratings_predictions">repo.</a></p>
+<h2 id="eda">EDA</h2>
+<p>This dataset provided us with identical dev, test and train files, were the dev and test ones had 5.000 entries each, and the train one had 200.000, plus the star rating classes were perfectly balanced too! This is a peek at what these tables had to offer:</p>
+<div>
+<table>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>review_id</th>
+      <th>product_id</th>
+      <th>reviewer_id</th>
+      <th>stars</th>
+      <th>review_body</th>
+      <th>review_title</th>
+      <th>language</th>
+      <th>product_category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>es_0417480</td>
+      <td>product_es_0873923</td>
+      <td>reviewer_es_0672978</td>
+      <td>1</td>
+      <td>Malisimo, muy grande demasiado aparatoso y mal...</td>
+      <td>Mala compra</td>
+      <td>es</td>
+      <td>wireless</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>es_0180432</td>
+      <td>product_es_0713146</td>
+      <td>reviewer_es_0100858</td>
+      <td>1</td>
+      <td>No he recibido el pedido no la devolución</td>
+      <td>No lo he recibido</td>
+      <td>es</td>
+      <td>apparel</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>es_0144850</td>
+      <td>product_es_0356874</td>
+      <td>reviewer_es_0486447</td>
+      <td>1</td>
+      <td>Tengo que buscar otro sistema, este no funcion...</td>
+      <td>Que no aprieta bien en el manillar</td>
+      <td>es</td>
+      <td>sports</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>es_0339629</td>
+      <td>product_es_0939832</td>
+      <td>reviewer_es_0894703</td>
+      <td>1</td>
+      <td>Utilicé las brocas de menor diámetro y se me d...</td>
+      <td>Brocas de mantequilla</td>
+      <td>es</td>
+      <td>home_improvement</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>es_0858362</td>
+      <td>product_es_0489066</td>
+      <td>reviewer_es_0887663</td>
+      <td>1</td>
+      <td>No me gusta su olor a viejo y aspecto malo</td>
+      <td>No me gusta</td>
+      <td>es</td>
+      <td>beauty</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>The datasets contained products of several categories, but the category didn&#39;t seem to have any effect in the average star rating; the best rated category was eBooks, whose quality is usually average and rating depends on how much the reader likes the content itself. And there was at most two reviews by any of the users or for any product, so there&#39;s no risk of having an extremely forgiving customer or great product throw us off the scent. </p>
+<img src="images\p2\output_20_0.png" alt=""  class="center"/>
+<img src="images\p2\output_21_0.png" alt=""  class="center"/>
+<img src="images\p2\output_22_0.png" alt=""  class="center"/>
+<p>So after reviewing the great dataset we had, we started working on the reviews.</p>
+<h2 id="processing">Processing</h2>
+<h3 id="pre-processing">Pre-processing</h3>
+<img src="images\p2\output_27_0.png" alt=""  class="center"/>
+<p>Our average review has 27.5 words, in Spanish. So, to make each appearance of any word as standard as possible we put everything in lowercase and replaced accented letters with their unaccented version. Finally we added a column to label the reviews as positive (4 and 5 stars) and negative because, when have we felt great about a purchase and gave it <em>three</em> stars?</p>
+<h3 id="tokenization">Tokenization</h3>
+<p>The long-honored NLP technique to evaluate a corpus of text by each word. We tokenized out reviews&#39; titles and bodies, but not after having gotten rid of special characters, punctuation marks, misspelt words, numbers and (for now, <em>wink</em>) emojis.</p>
+<img src="images\p2\code_limpieza.jpeg" alt="" class="center"/>
+<img src="images\p2\code_tokenizar.jpeg" alt="" class="center"/>
+<h3 id="lemmatization">Lemmatization</h3>
+<p>We used the SpaCy library for this part of our project, because of its well known performance in spanish. It was able to take our reviews and classify most word&#39;s tokens properly with a few lines of code: </p>
+<img src="images\p2\code_spacytest.jpeg" alt=""  class="center"/>
+<pre><code>       Token  Token Text Token Pos Token Lemma
+<span class="hljs-number">0</span>       buscar      buscar      VERB      buscar
+<span class="hljs-number">1</span>      sistema     sistema      NOUN     sistema
+<span class="hljs-number">2</span>           no          no       ADV          no
+<span class="hljs-number">3</span>     funciona    funciona      VERB   funcionar
+<span class="hljs-number">4</span>         bien        bien       ADV        bien
+<span class="hljs-number">5</span>   abrazadera  abrazadera      NOUN  abrazadera
+<span class="hljs-number">6</span>        lleva       lleva      VERB      llevar
+<span class="hljs-number">7</span>      agarrar     agarrar      VERB     agarrar
+<span class="hljs-number">8</span>     manillar    manillar      VERB    manillar
+<span class="hljs-number">9</span>           no          no       ADV          no
+<span class="hljs-number">10</span>     aprieta     aprieta      VERB     apretar
+<span class="hljs-number">11</span>        bien        bien       ADV        bien
+<span class="hljs-number">12</span>  deslizando  deslizando      VERB    deslizar
+<span class="hljs-number">13</span>    linterna    linterna      VERB    linterna
+<span class="hljs-number">14</span>       hacia       hacia       ADP       hacia
+<span class="hljs-number">15</span>       abajo       abajo       ADV      abajar
+</code></pre><h3 id="word-frequency-analysis">Word Frequency Analysis</h3>
+<p>We started by reviewing which words appear most frequently in negative or positive reviews</p>
+<img src="images\p2\output_57_0.png" alt=""  class="center"/>
+<img src="images\p2\output_57_1.png" alt=""  class="center"/>
+<p>As we can see here, there are plenty words that are common to all reviews, words like &quot;quality&quot;, &quot;product&quot; or &quot;good&quot;, so we got rid of some of these to get a more representative group of words in the categories, with some exceptions that showed themselves to be important further ahead  in the prediction step.</p>
+<img src="images\p2\code_removewords.jpeg" alt=""  class="center"/>
+
+<p>So the new top ten words in our reviews are: </p>
+<img src="images\p2\output_64_0.png" alt=""  class="center"/>
+<img src="images\p2\output_64_1.png" alt=""  class="center"/>
+
+<p>As you can see, although we still have some jack-of-all-trades words, on the lower end of the top ten we are left with very descriptive words like &quot;problem&quot; or &quot;return&quot; for the negative reviews, and &quot;recommend&quot; or &quot;quality/price&quot; in the positive ones. Great!</p>
+<p>Lastly, we combined the review titles with their bodies to have all the relevant text in one single feature for our models. Our final dataset was looking like this: </p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>words</th>
+      <th>words_rm</th>
+      <th>stars</th>
+      <th>binario</th>
+      <th>words_joint</th>
+      <th>words_joint_rm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>[malo, comprar, malisimo, grande, demasiar, ap...</td>
+      <td>[malo, malisimo, aparatoso, mal, protector]</td>
+      <td>1</td>
+      <td>0</td>
+      <td>malo comprar malisimo grande demasiar aparatos...</td>
+      <td>malo malisimo aparatoso mal protector</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>[no, recibir, no, recibir, pedir, no, devolucion]</td>
+      <td>[no, recibir, no, recibir, no, devolucion]</td>
+      <td>1</td>
+      <td>0</td>
+      <td>no recibir no recibir pedir no devolucion</td>
+      <td>no recibir no recibir no devolucion</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>[no, apretar, bien, manillar, buscar, sistema,...</td>
+      <td>[no, apretar, bien, manillar, buscar, sistema,...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>no apretar bien manillar buscar sistema no fun...</td>
+      <td>no apretar bien manillar buscar sistema no bie...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>[broca, mantequilla, utilizar, broca, menor, d...</td>
+      <td>[broca, mantequilla, utilizar, broca, menor, d...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>broca mantequilla utilizar broca menor diametr...</td>
+      <td>broca mantequilla utilizar broca menor diametr...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>[no, gustar, no, gustar, olor, viejo, aspecto,...</td>
+      <td>[no, no, olor, viejo, aspecto, malo]</td>
+      <td>1</td>
+      <td>0</td>
+      <td>no gustar no gustar olor viejo aspecto malo</td>
+      <td>no no olor viejo aspecto malo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body></html>
