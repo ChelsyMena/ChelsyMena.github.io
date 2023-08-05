@@ -1,0 +1,624 @@
+<h1 id="real-estate-price-prediction">Real Estate Price Prediction</h1>
+<p>Using a dataset with the listings on the <a href="www.properati.com.ar">Properati</a> website, a fellow Machine Learning Enthusiast and I set out to develop a model that would allow us to predict the sale price of apartments and houses in Buenos Aires, Argentina.</p>
+<p>The main idea was to train two models: one with minimal transformation and another with:</p>
+<ul>
+<li>Outlier detection and elimination</li>
+<li>Encoding of categorical variables </li>
+<li>Missing Values imputing</li>
+<li>Data Normalization</li>
+<li>New variable generation and dimensionality reduction (SVD/PCA).</li>
+</ul>
+<h2 id="eda">EDA</h2>
+<p>Here&#39;s the first peek into our original dataset</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="0" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>start_date</th>
+      <th>end_date</th>
+      <th>created_on</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>l1</th>
+      <th>l2</th>
+      <th>l3</th>
+      <th>rooms</th>
+      <th>bedrooms</th>
+      <th>bathrooms</th>
+      <th>surface_total</th>
+      <th>surface_covered</th>
+      <th>price</th>
+      <th>currency</th>
+      <th>title</th>
+      <th>description</th>
+      <th>property_type</th>
+      <th>operation_type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-10-17</td>
+      <td>2019-12-23</td>
+      <td>2019-10-17</td>
+      <td>-34.605880</td>
+      <td>-58.384949</td>
+      <td>Argentina</td>
+      <td>Capital Federal</td>
+      <td>San Cristobal</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>140.0</td>
+      <td>140.0</td>
+      <td>153000.0</td>
+      <td>USD</td>
+      <td><strong><em>Venta semipiso centro, ideal hostel**</em></strong></td>
+      <td>DESCRIPCION DE LA PROPIEDAD: Departamento de 1...</td>
+      <td>Departamento</td>
+      <td>Venta</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-10-17</td>
+      <td>2019-11-21</td>
+      <td>2019-10-17</td>
+      <td>-34.624056</td>
+      <td>-58.412110</td>
+      <td>Argentina</td>
+      <td>Capital Federal</td>
+      <td>Boedo</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>70.0</td>
+      <td>58.0</td>
+      <td>159000.0</td>
+      <td>USD</td>
+      <td>Espectacular PH reciclado en Boedo sin expensas.</td>
+      <td>PH reciclado en Boedo a una cuadra de la plaz...</td>
+      <td>PH</td>
+      <td>Venta</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-10-17</td>
+      <td>2019-11-01</td>
+      <td>2019-10-17</td>
+      <td>-34.593569</td>
+      <td>-58.427474</td>
+      <td>Argentina</td>
+      <td>Capital Federal</td>
+      <td>Palermo</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>45.0</td>
+      <td>45.0</td>
+      <td>125000.0</td>
+      <td>USD</td>
+      <td>Depto.tipo casa de 2 ambientes en Venta en Pal...</td>
+      <td>2 ambienets amplio , excelente estado , patio ...</td>
+      <td>PH</td>
+      <td>Venta</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-10-17</td>
+      <td>2019-12-23</td>
+      <td>2019-10-17</td>
+      <td>-34.581294</td>
+      <td>-58.436754</td>
+      <td>Argentina</td>
+      <td>Capital Federal</td>
+      <td>Palermo</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>85.0</td>
+      <td>50.0</td>
+      <td>295000.0</td>
+      <td>USD</td>
+      <td>COSTA RICA 5800 / PALERMO HOLLYWOOD / VENTA PH...</td>
+      <td>HERMOSO PH EN PALERMO!!!2 AMBIENTES TOTALMENTE...</td>
+      <td>PH</td>
+      <td>Venta</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-10-17</td>
+      <td>2020-03-11</td>
+      <td>2019-10-17</td>
+      <td>-34.914194</td>
+      <td>-57.938219</td>
+      <td>Argentina</td>
+      <td>Bs.As. G.B.A. Zona Sur</td>
+      <td>La Plata</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>50.0</td>
+      <td>35.0</td>
+      <td>40000.0</td>
+      <td>USD</td>
+      <td>58 entre 1 y 2  Venta de departamento en ph.1 ...</td>
+      <td>58 entre 1 y 2  Venta de departamento en PH. P...</td>
+      <td>PH</td>
+      <td>Venta</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We were met with 91485 rows and 19 columns! But we took some quick filtering steps to get rid of some listings where users might&#39;ve made mistakes</p>
+<ul>
+<li>Removed listings where the covered surface was greater than the total surface</li>
+<li>Removed all but one listings where the entire row is identical to another</li>
+<li>Removed listings where lat, long, title, description are exactly the same assuming these refer to the same property, and only kept the one with the latest publication date
+This left us with around 65.000 listings and we were ready to go! </li>
+</ul>
+<p>We started by exploring our variables, we won&#39;t need a few columns like currency or city (there&#39;s only one value in each of those) so we dropped them, and got to our numerical ones.</p>
+<img src="images\p1\output_25_0.jpeg" alt=""  class="center"/>
+<p>We can see that most properties for sale on the website have a surface range of less than 200 m², but there are still many properties with a lot of surface both covered and uncovered. Which could be congruent with properties that claim to have up to 26 spaces. These properties of 200 m² or less should also correspond to the majority of prices we see are less than \$500000 USD. But we know that we also manage properties around a million dollars, and some that even cross the 10 million barrier. We must limit this data so that the model is effective in the price ranges and sizes where we have most of the publications.</p>
+<p>We removed the outliers using the quantiles plus or minus 1.5 tomes the IQR as bounds, since this technique simply focuses on where most of the listings are. Focusing on the total and covered surface, and the price, we removed 6838 listings. This is how our variables behaved then: </p>
+<img src="images\p1\output_35_0.jpeg" alt=""  class="center"/>
+<p>It turned out also that we didn&#39;t have that any missing values on these variables. Only the number of bathrooms was left blank on around 600 listings, and there wasn&#39;t a quickly found relationship between other variables and the number of bathrooms in order to input them with an educated guess, so we decided to drop these instances too. However, there were a few listings without latitude and longitude, for these we used an average value for each neighborhood, since even if it wasn&#39;t the exact location property prices tend to be close in the same area of a city.</p>
+<p>Finally, we used sci-kit learn&#39;s Standard Scaler to center the numerical columns and pandas&#39; get_dummies to get a One Hot Encoding of the type of property (House, apartment or PH).</p>
+<img src="images\p1\output_59_1.jpeg" alt=""  class="center"/>
+<h2 id="modeling">Modeling</h2>
+<h3 id="benchmark">Benchmark</h3>
+<p>After trying a few models around, for the untreated dataset, we settled on a random forest with 11 levels of depth. This same model, trained and tested in the treated model was our benchmark. it behaved like this: </p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="0" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Model</th>
+      <th>MAE Train</th>
+      <th>MAE Test</th>
+      <th>RMSE Train</th>
+      <th>RMSE Test</th>
+      <th>R2 Train</th>
+      <th>R2 Test</th>
+      <th>Training Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Original Dataset</td>
+      <td>60923.26</td>
+      <td>68672.73</td>
+      <td>128688.75</td>
+      <td>161933.84</td>
+      <td>0.8164</td>
+      <td>0.7040</td>
+      <td>0.380297</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Transformed Dataset</td>
+      <td>25709.60</td>
+      <td>30092.01</td>
+      <td>37241.06</td>
+      <td>43518.55</td>
+      <td>0.8624</td>
+      <td>0.8055</td>
+      <td>0.257043</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Original Dataset</strong></p>
+<img src="images\p1\output_79_0.jpeg" alt=""  class="center"/>
+<p><strong>Transformed Dataset</strong></p>
+<img src="images\p1\output_84_0.jpeg" alt=""  class="center"/>
+<h3 id="improvements">Improvements</h3>
+<p>We tried first to reduce our features by grouping out variables into related clusters. We used Principal component Analysis on the following groups of variables: <code>lat and lon</code>, <code>rooms, bedrooms and bathrooms</code>, and <code>total_surface and covered_surface</code></p>
+<p>Our dataset looked like this:</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="0" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>0</th>
+      <th>0</th>
+      <th>Departamento</th>
+      <th>PH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.054180</td>
+      <td>6.681698</td>
+      <td>2.974945</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.029380</td>
+      <td>-0.509439</td>
+      <td>-0.257465</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.000186</td>
+      <td>-1.276422</td>
+      <td>-0.162592</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.003151</td>
+      <td>-1.276422</td>
+      <td>-0.567317</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.023784</td>
+      <td>-1.858027</td>
+      <td>-1.218202</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>But a decision tree trained with this new dataset behaved worse in every metric:</p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="0" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>MAE Train</th>
+      <th>MAE Test</th>
+      <th>RMSE Train</th>
+      <th>RMSE Test</th>
+      <th>R2 Train</th>
+      <th>R2 Test</th>
+      <th>Tiempo de Ejecución</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Transformed Dataset</td>
+      <td>25709.60</td>
+      <td>30092.01</td>
+      <td>37241.06</td>
+      <td>43518.55</td>
+      <td>0.8624</td>
+      <td>0.8055</td>
+      <td>0.257043</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>PCA Groups</td>
+      <td>34473.22</td>
+      <td>38660.18</td>
+      <td>49039.17</td>
+      <td>55192.48</td>
+      <td>0.7613</td>
+      <td>0.6872</td>
+      <td>0.255444</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Next we tried this same tactic, without telling the model which variables we felt could be grouped. Performance didn&#39;t improve, and the best model was the one trained with 9 features, so it didn&#39;t pose any advantage in training time or compute needs. </p>
+<p>However we were able to retrieve feature importance to see how much the variables were weighing in the principal component analysis&#39;s attempt at reducing our number of variables. </p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Feature</th>
+      <th>Porcentaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lat</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>lon</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>scaled_rooms</td>
+      <td>21.65</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>scaled_bedrooms</td>
+      <td>21.23</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>scaled_bathrooms</td>
+      <td>12.50</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>scaled_surface_total</td>
+      <td>21.35</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>scaled_surface_covered</td>
+      <td>22.97</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Departamento</td>
+      <td>0.20</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>PH</td>
+      <td>0.10</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Since this was a somewhat failed experiment we moved onto changing the model altogether.</p>
+<p>We tried first a Linear Regression, with 2, 3, and 4 polynomic terms. But none of these yielded better results than the benchmark. We employed Ridge and Lasso regularization to improve these results, trying an array of coefficients. </p>
+<p>We found that in this case, the Ridge regularization tended to increase the MAE as the coefficient increased, although it presented a minimum around 100, while the value of R2 remained relatively stable at a value of 0.7. The Lasso regularization showed an increase in the MAE and a decrease in the R2 when the coefficient increased. Additionally, we saw that the computational time used by the lasso regression is greater. Therefore, finally, the Linear Regression with Ridge regularization of coefficient 250 was selected as the best model of the bunch, but it still didn&#39;t beat the benchmark.</p>
+<img src="images\p1\output_112_0.jpeg" alt=""  class="center"/>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="0" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>MAE Train</th>
+      <th>MAE Test</th>
+      <th>RMSE Train</th>
+      <th>RMSE Test</th>
+      <th>R2 Train</th>
+      <th>R2 Test</th>
+      <th>Tiempo de Ejecución</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Benchmark - Transformed Dataset</td>
+      <td>25709.60</td>
+      <td>30092.01</td>
+      <td>37241.06</td>
+      <td>43518.55</td>
+      <td>0.8624</td>
+      <td>0.8055</td>
+      <td>0.257043</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>PCA groups</td>
+      <td>34473.22</td>
+      <td>38660.18</td>
+      <td>49039.17</td>
+      <td>55192.48</td>
+      <td>0.7613</td>
+      <td>0.6872</td>
+      <td>0.255444</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Linear Regression 3 Terms</td>
+      <td>33313.32</td>
+      <td>33537.99</td>
+      <td>46884.14</td>
+      <td>49390.16</td>
+      <td>0.7819</td>
+      <td>0.7495</td>
+      <td>1.035203</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Ridge 250</td>
+      <td>33841.73</td>
+      <td>34034.00</td>
+      <td>47780.27</td>
+      <td>53761.95</td>
+      <td>0.7734</td>
+      <td>0.7032</td>
+      <td>1.207825</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Since none of our models have performed better than the benchmark, we decided to try ensemble techniques and went for Boosting. To find our model we employed 5-fold cross validation in the test dataset, using the already-vetted Decision Tree as the base estimator and the MSE and MAE as the evaluation criterion, we came to find that out best tree was one with a max depth of 25, that yielded a MAE of 28.698, already better than our benchmark (when we didn&#39;t let the Grid Search go quite so deep).</p>
+<p>Then we set our AdaBoost Regressor to find a combination of up to 250 trees to make a good prediction for us. We found that less than 50 trees were enough to yield low MAEs, even lower than our benchmark&#39;s at last!</p>
+<img src="images\p1\output_123_0.jpeg" alt=""  class="center"/>
+<p>So we finally settled on a AdaBoost Regressor made our of 50 Decision Trees with 25 levels of depth. </p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="0" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Modelo</th>
+      <th>MAE Train</th>
+      <th>MAE Test</th>
+      <th>RMSE Train</th>
+      <th>RMSE Test</th>
+      <th>R2 Train</th>
+      <th>R2 Test</th>
+      <th>Tiempo de Ejecución</th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr>
+      <th>0</th>
+      <td>Benchmark - Transformed Dataset</td>
+      <td>25709.60</td>
+      <td>30092.01</td>
+      <td>37241.06</td>
+      <td>43518.55</td>
+      <td>0.8624</td>
+      <td>0.8055</td>
+      <td>0.257043</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>PCA Groups</td>
+      <td>34473.22</td>
+      <td>38660.18</td>
+      <td>49039.17</td>
+      <td>55192.48</td>
+      <td>0.7613</td>
+      <td>0.6872</td>
+      <td>0.255444</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Linear Regressor 3 Terms</td>
+      <td>33313.32</td>
+      <td>33537.99</td>
+      <td>46884.14</td>
+      <td>49390.16</td>
+      <td>0.7819</td>
+      <td>0.7495</td>
+      <td>1.035203</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td> Ridge 250</td>
+      <td>33841.73</td>
+      <td>34034.00</td>
+      <td>47780.27</td>
+      <td>53761.95</td>
+      <td>0.7734</td>
+      <td>0.7032</td>
+      <td>1.207825</td>
+    </tr>
+    <tr style="background: #90ee90;">
+      <th>0</th>
+      <td>AdaBoost Tree Regressor</td>
+      <td>4588.35</td>
+      <td>21104.48</td>
+      <td>9838.47</td>
+      <td>34174.14</td>
+      <td>0.9904</td>
+      <td>0.8801</td>
+      <td>7.707472</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<img src="images\p1\output_127_0.jpeg" alt=""  class="center"/>
+<h2 id="and-another-thing-">And another thing...</h2>
+<p>Since we had the neighborhood for each listing, and a lat and long value too we wanted to see if we could get a centroid for ach neighborhood using a clustering algorithm. </p>
+<p>Our dataset contemplated 57 unique values in the neighborhood columns, but the official records of the city indicate there&#39;s only 48. The first step was classifying these correctly into the proper neighborhoods with the help of Saint Google. Still, there were three of these &quot;neighborhoods&quot; that weren&#39;t easily re located, however since the clustering algorithm we would use didn&#39;t take into account this labels this &quot;mistakes&quot; would only be an issue for the visualization in which some dots would be crossing some frontiers, so we left those be. 8</p>
+<p>So we, of course, used a KNN algorithm with 48 clusters, one for each neighborhood. And then used the folium library to graph the results on top of a map of Buenos Aires. </p>
+<img src="images\p1\code_folium.jpeg" alt=""  class="center"/>

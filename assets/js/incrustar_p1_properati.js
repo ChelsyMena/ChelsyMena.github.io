@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
     // Seleccionar el contenedor donde se cargará el Pedazo HTML
-    var contenedor = document.getElementById('notebook_properati');
+    var contenedor = document.getElementById('articulo_properati');
 
     // Crear un objeto XMLHttpRequest para cargar el Pedazo de  HTML
     var xhr = new XMLHttpRequest();
@@ -16,6 +16,6 @@ window.addEventListener('DOMContentLoaded', function() {
     };
 
     // Obtener el  pedazo de  HTML
-    xhr.open('GET', '../notebook_p1_properati.html', true);
+    xhr.open('GET', '../art_p1_properati.html', true);
     xhr.send();
 });
