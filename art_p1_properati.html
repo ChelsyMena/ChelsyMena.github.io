@@ -172,13 +172,13 @@
 This left us with around 65.000 listings and we were ready to go! </li>
 </ul>
 <p>We started by exploring our variables, we won&#39;t need a few columns like currency or city (there&#39;s only one value in each of those) so we dropped them, and got to our numerical ones.</p>
-<img src="images\p1\output_25_0.jpeg" alt=""  class="center"/>
+<img src="images\p1\output_25_0.png" alt=""  class="center"/>
 <p>We can see that most properties for sale on the website have a surface range of less than 200 m², but there are still many properties with a lot of surface both covered and uncovered. Which could be congruent with properties that claim to have up to 26 spaces. These properties of 200 m² or less should also correspond to the majority of prices we see are less than \$500000 USD. But we know that we also manage properties around a million dollars, and some that even cross the 10 million barrier. We must limit this data so that the model is effective in the price ranges and sizes where we have most of the publications.</p>
 <p>We removed the outliers using the quantiles plus or minus 1.5 tomes the IQR as bounds, since this technique simply focuses on where most of the listings are. Focusing on the total and covered surface, and the price, we removed 6838 listings. This is how our variables behaved then: </p>
-<img src="images\p1\output_35_0.jpeg" alt=""  class="center"/>
+<img src="images\p1\output_35_0.png" alt=""  class="center"/>
 <p>It turned out also that we didn&#39;t have that any missing values on these variables. Only the number of bathrooms was left blank on around 600 listings, and there wasn&#39;t a quickly found relationship between other variables and the number of bathrooms in order to input them with an educated guess, so we decided to drop these instances too. However, there were a few listings without latitude and longitude, for these we used an average value for each neighborhood, since even if it wasn&#39;t the exact location property prices tend to be close in the same area of a city.</p>
 <p>Finally, we used sci-kit learn&#39;s Standard Scaler to center the numerical columns and pandas&#39; get_dummies to get a One Hot Encoding of the type of property (House, apartment or PH).</p>
-<img src="images\p1\output_59_1.jpeg" alt=""  class="center"/>
+<img src="images\p1\output_59_1.png" alt=""  class="center"/>
 <h2 id="modeling">Modeling</h2>
 <h3 id="benchmark">Benchmark</h3>
 <p>After trying a few models around, for the untreated dataset, we settled on a random forest with 11 levels of depth. This same model, trained and tested in the treated model was our benchmark. it behaved like this: </p>
@@ -238,9 +238,9 @@ This left us with around 65.000 listings and we were ready to go! </li>
 </div>
 
 <p><strong>Original Dataset</strong></p>
-<img src="images\p1\output_79_0.jpeg" alt=""  class="center"/>
+<img src="images\p1\output_79_0.png" alt=""  class="center"/>
 <p><strong>Transformed Dataset</strong></p>
-<img src="images\p1\output_84_0.jpeg" alt=""  class="center"/>
+<img src="images\p1\output_84_0.png" alt=""  class="center"/>
 <h3 id="improvements">Improvements</h3>
 <p>We tried first to reduce our features by grouping out variables into related clusters. We used Principal component Analysis on the following groups of variables: <code>lat and lon</code>, <code>rooms, bedrooms and bathrooms</code>, and <code>total_surface and covered_surface</code></p>
 <p>Our dataset looked like this:</p>
@@ -447,7 +447,7 @@ This left us with around 65.000 listings and we were ready to go! </li>
 <p>Since this was a somewhat failed experiment we moved onto changing the model altogether.</p>
 <p>We tried first a Linear Regression, with 2, 3, and 4 polynomic terms. But none of these yielded better results than the benchmark. We employed Ridge and Lasso regularization to improve these results, trying an array of coefficients. </p>
 <p>We found that in this case, the Ridge regularization tended to increase the MAE as the coefficient increased, although it presented a minimum around 100, while the value of R2 remained relatively stable at a value of 0.7. The Lasso regularization showed an increase in the MAE and a decrease in the R2 when the coefficient increased. Additionally, we saw that the computational time used by the lasso regression is greater. Therefore, finally, the Linear Regression with Ridge regularization of coefficient 250 was selected as the best model of the bunch, but it still didn&#39;t beat the benchmark.</p>
-<img src="images\p1\output_112_0.jpeg" alt=""  class="center"/>
+<img src="images\p1\output_112_0.png" alt=""  class="center"/>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -527,7 +527,7 @@ This left us with around 65.000 listings and we were ready to go! </li>
 
 <p>Since none of our models have performed better than the benchmark, we decided to try ensemble techniques and went for Boosting. To find our model we employed 5-fold cross validation in the test dataset, using the already-vetted Decision Tree as the base estimator and the MSE and MAE as the evaluation criterion, we came to find that out best tree was one with a max depth of 25, that yielded a MAE of 28.698, already better than our benchmark (when we didn&#39;t let the Grid Search go quite so deep).</p>
 <p>Then we set our AdaBoost Regressor to find a combination of up to 250 trees to make a good prediction for us. We found that less than 50 trees were enough to yield low MAEs, even lower than our benchmark&#39;s at last!</p>
-<img src="images\p1\output_123_0.jpeg" alt=""  class="center"/>
+<img src="images\p1\output_123_0.png" alt=""  class="center"/>
 <p>So we finally settled on a AdaBoost Regressor made our of 50 Decision Trees with 25 levels of depth. </p>
 <div>
 <style scoped>
@@ -616,9 +616,11 @@ This left us with around 65.000 listings and we were ready to go! </li>
   </tbody>
 </table>
 </div>
-<img src="images\p1\output_127_0.jpeg" alt=""  class="center"/>
+<img src="images\p1\output_127_0.png" alt=""  class="center"/>
 <h2 id="and-another-thing-">And another thing...</h2>
 <p>Since we had the neighborhood for each listing, and a lat and long value too we wanted to see if we could get a centroid for ach neighborhood using a clustering algorithm. </p>
 <p>Our dataset contemplated 57 unique values in the neighborhood columns, but the official records of the city indicate there&#39;s only 48. The first step was classifying these correctly into the proper neighborhoods with the help of Saint Google. Still, there were three of these &quot;neighborhoods&quot; that weren&#39;t easily re located, however since the clustering algorithm we would use didn&#39;t take into account this labels this &quot;mistakes&quot; would only be an issue for the visualization in which some dots would be crossing some frontiers, so we left those be. 8</p>
 <p>So we, of course, used a KNN algorithm with 48 clusters, one for each neighborhood. And then used the folium library to graph the results on top of a map of Buenos Aires. </p>
 <img src="images\p1\code_folium.jpeg" alt=""  class="center"/>
+<p>We found that clustering fails to fit centroids perfectly into the neighborhoods of Buenos Aires. It would be excellent if it did, but we must remember that although for us the subdivision is obvious, especially where the data is well labeled and we see the color change as soon as the border is crossed, for the algorithm itwould not be obvious since the neighborhoods have irregular shapes and sizes. In addition, data density affects the result as well, we see neighborhoods fully covered with listings with two or three centroids assigned to them (such as Almagro); while others with a small number of publications do not have their own centroid but manage to affect the position of the centroid designated to its neighboring neighborhood (such as Villa Riachuelo). but it was a very cool exercise nonetheless!</p>
+
