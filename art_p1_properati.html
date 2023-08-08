@@ -172,13 +172,13 @@
 This left us with around 65.000 listings and we were ready to go! </li>
 </ul>
 <p>We started by exploring our variables, we won&#39;t need a few columns like currency or city (there&#39;s only one value in each of those) so we dropped them, and got to our numerical ones.</p>
-<img src="images\p1\output_25_0.png" alt=""  class="center"/>
+<img src="images\p1\output_25_0.png" alt=""  class="center" style="width: 70%;"/>
 <p>We can see that most properties for sale on the website have a surface range of less than 200 m², but there are still many properties with a lot of surface both covered and uncovered. Which could be congruent with properties that claim to have up to 26 spaces. These properties of 200 m² or less should also correspond to the majority of prices we see are less than \$500000 USD. But we know that we also manage properties around a million dollars, and some that even cross the 10 million barrier. We must limit this data so that the model is effective in the price ranges and sizes where we have most of the publications.</p>
 <p>We removed the outliers using the quantiles plus or minus 1.5 tomes the IQR as bounds, since this technique simply focuses on where most of the listings are. Focusing on the total and covered surface, and the price, we removed 6838 listings. This is how our variables behaved then: </p>
-<img src="images\p1\output_35_0.png" alt=""  class="center"/>
+<img src="images\p1\output_35_0.png" alt=""  class="center" style="width: 70%;"/>
 <p>It turned out also that we didn&#39;t have that any missing values on these variables. Only the number of bathrooms was left blank on around 600 listings, and there wasn&#39;t a quickly found relationship between other variables and the number of bathrooms in order to input them with an educated guess, so we decided to drop these instances too. However, there were a few listings without latitude and longitude, for these we used an average value for each neighborhood, since even if it wasn&#39;t the exact location property prices tend to be close in the same area of a city.</p>
 <p>Finally, we used sci-kit learn&#39;s Standard Scaler to center the numerical columns and pandas&#39; get_dummies to get a One Hot Encoding of the type of property (House, apartment or PH).</p>
-<img src="images\p1\output_59_1.png" alt=""  class="center"/>
+<img src="images\p1\output_59_1.png" alt=""  class="center" style="width: 70%;"/>
 <h2 id="modeling">Modeling</h2>
 <h3 id="benchmark">Benchmark</h3>
 <p>After trying a few models around, for the untreated dataset, we settled on a random forest with 11 levels of depth. This same model, trained and tested in the treated model was our benchmark. it behaved like this: </p>
@@ -447,7 +447,7 @@ This left us with around 65.000 listings and we were ready to go! </li>
 <p>Since this was a somewhat failed experiment we moved onto changing the model altogether.</p>
 <p>We tried first a Linear Regression, with 2, 3, and 4 polynomic terms. But none of these yielded better results than the benchmark. We employed Ridge and Lasso regularization to improve these results, trying an array of coefficients. </p>
 <p>We found that in this case, the Ridge regularization tended to increase the MAE as the coefficient increased, although it presented a minimum around 100, while the value of R2 remained relatively stable at a value of 0.7. The Lasso regularization showed an increase in the MAE and a decrease in the R2 when the coefficient increased. Additionally, we saw that the computational time used by the lasso regression is greater. Therefore, finally, the Linear Regression with Ridge regularization of coefficient 250 was selected as the best model of the bunch, but it still didn&#39;t beat the benchmark.</p>
-<img src="images\p1\output_112_0.png" alt=""  class="center"/>
+<img src="images\p1\output_112_0.png" alt=""  class="center" style="width: 70%;"/>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
