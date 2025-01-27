@@ -1,0 +1,24 @@
+<html>
+	<head>
+
+	</head>
+	
+	<body>
+		<h1 id="our-own-knn-implementation">Our own KNN Implementation</h1>
+<p>Machine learning algorithms are often evaluated by their simplicity, computational feasibility, and accuracy. KNN, or K-Nearest Neighbors, is one of the simplest yet surprisingly effective supervised classification algorithms. My classmate and I recently dove into this algorithm by building it from scratch and applying it to the waveform dataset — a classic benchmark problem. Here you can see the simple way we implemented this algorithm, and check out the rest of the code for this project <a href="https://github.com/ChelsyMena/MLDM_IML_Project">here</a>.</p>
+<img src="images\p4\knn.jpeg" alt=""  class="center" style="width: 70%;"/>
+<p>The dataset consists of 5000 samples, 3 balanced classes, and 21 attributes, each laced with noise to make classification more challenging. Our task? Design and evaluate a KNN classifier capable of competing with the optimal Bayesian classification rate of 86%.</p>
+<h3 id="from-exploration-to-optimization">From Exploration to Optimization</h3>
+<p>The first step in our project was an exploratory data analysis to better understand the dataset. We confirmed the features&#39; normal distributions through Q-Q plots and identified clusters with significant class overlap using scatterplots. Fortunately, the dataset was high quality, with negligible outliers, allowing us to dive directly into classification.</p>
+<img src="images\p4\qq_plots.png" alt=""  class="center" style="width: 70%;"/>
+<p>Next, we experimented with hyperparameter tuning. Through cross-validation with varying numbers of folds and neighbors, we found that a 5-fold cross-validation and k=40k=40k=40 neighbors achieved the best balance between accuracy and computational efficiency.</p>
+<img src="images\p4\K-FOLDS.png" alt=""  class="center" style="width: 70%;"/>
+<h3 id="speed-and-scale">Speed and Scale</h3>
+<p>To improve the algorithm&#39;s runtime, we implemented two data reduction techniques: Bayesian region cleaning and data condensation. These steps reduced the training data from 4000 samples to just over 600 while maintaining a near-optimal accuracy of 85%. While this approach reduced execution time by over 80%, we noted that in larger-scale applications, such reductions could prove invaluable.</p>
+<img src="images\p4\speed.png" alt=""  class="center" style="width: 70%;"/>
+<p>We also experimented with KD-Trees to optimize the search for neighbors. Unfortunately, the high dimensionality of the dataset (21 features) and its modest size hindered performance, leading to slower execution times compared to the brute force approach.</p>
+<h3 id="takeaways">Takeaways</h3>
+<p>The waveform dataset is an excellent testing ground for KNN, given its challenging class overlaps and noise. While our implementation achieved competitive accuracy, further work could explore dimensionality reduction techniques or advanced indexing structures for larger datasets.</p>
+
+</body>
+</html>
